@@ -15,11 +15,11 @@ D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63243
+64662
 Successfully changed project path to: D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 121.36 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 119.74 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Unity Directory/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,81 +35,135 @@ Initialize mono
 Mono path[0] = 'C:/Unity Directory/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Unity Directory/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Unity Directory/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56624
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Unity Directory/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003233 seconds.
+Registered in 0.003125 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 135.51 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 119.87 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.862 seconds
+- Completed reload, in  1.723 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002759 seconds.
+Registered in 0.002390 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 129.07 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 128.95 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.478 seconds
+- Completed reload, in  1.497 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4042 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.0 MB.
+System memory in use before: 171.1 MB.
 System memory in use after: 169.5 MB.
 
 Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 4482.
-Total: 3.380100 ms (FindLiveObjects: 0.298700 ms CreateObjectMapping: 0.192100 ms MarkObjects: 2.037100 ms  DeleteObjects: 0.851100 ms)
+Total: 4.846900 ms (FindLiveObjects: 0.499800 ms CreateObjectMapping: 0.436700 ms MarkObjects: 2.935900 ms  DeleteObjects: 0.973100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Tank.prefab
-  artifactKey: Guid(17f8a718e2819b149b2b98c419e98ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Tank.prefab using Guid(17f8a718e2819b149b2b98c419e98ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6123f8d1b9f22a1c2403905af455f6') in 0.424851 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 38.725253 seconds.
-  path: Assets/Prefabs/kv2_1940.prefab
-  artifactKey: Guid(070d1cb46fd43dc46b1c9c08737a48b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/kv2_1940.prefab using Guid(070d1cb46fd43dc46b1c9c08737a48b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b3c5646f4352c27bc0c261e091812c7') in 0.090059 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 276.674234 seconds.
   path: Assets/Prefabs/KV-2.prefab
   artifactKey: Guid(f281ea66475e0334388c765816ab8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/KV-2.prefab using Guid(f281ea66475e0334388c765816ab8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b66c351660c4d57a9bb2d655401c0399') in 0.085267 seconds 
+Start importing Assets/Prefabs/KV-2.prefab using Guid(f281ea66475e0334388c765816ab8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24b7ae3f3b5ece72cb13b61117ad05fd') in 0.478373 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.587229 seconds.
+  Time since last request: 1583.808707 seconds.
+  path: Assets/Prefabs/Tanker.prefab
+  artifactKey: Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tanker.prefab using Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4ff022081f4ba28a97643d148f7800') in 0.044694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.315032 seconds.
   path: Assets/Prefabs/Panzer IV.prefab
   artifactKey: Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Panzer IV.prefab using Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e758913dd805780c681315da2deadfdc') in 0.065661 seconds 
+Start importing Assets/Prefabs/Panzer IV.prefab using Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d1dd4cb5e677db6d24635bd93d9c09b') in 0.072673 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 364.538763 seconds.
+  Time since last request: 960.846594 seconds.
+  path: Assets/Prefabs/Tanker.prefab
+  artifactKey: Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tanker.prefab using Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbe0e8cfd230461650eede97d4b36b07') in 0.095644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.052956 seconds.
+  path: Assets/Prefabs/Tanker.prefab
+  artifactKey: Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tanker.prefab using Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a86dfda62d3d619bd9c4cf3e2fde0fe8') in 0.025725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.769554 seconds.
+  path: Assets/Prefabs/Tanker.prefab
+  artifactKey: Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tanker.prefab using Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8307188885c39ca67ea708f1313ff2c') in 0.021919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.902128 seconds.
   path: Assets/Prefabs/Panzer IV.prefab
   artifactKey: Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Panzer IV.prefab using Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9b3642a0ca981d93e68bb10d072ff9c') in 0.069889 seconds 
+Start importing Assets/Prefabs/Panzer IV.prefab using Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433ec70aeb36055ebd92adc73c80cd0a') in 0.088194 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 393.535175 seconds.
-  path: Assets/Prefabs/Shrapnel Trail.prefab
-  artifactKey: Guid(caceb1c6735324f44af77b16896f1b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Shrapnel Trail.prefab using Guid(caceb1c6735324f44af77b16896f1b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbf8b9e2c5ec7d55c7898df30481c534') in 0.009830 seconds 
+  Time since last request: 373.310691 seconds.
+  path: Assets/Settings/ForwardRenderer.asset
+  artifactKey: Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/ForwardRenderer.asset using Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9174a13f2758dbce77a54d5e669622f5') in 0.011924 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005494 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.653 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3920 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 183.1 MB.
+System memory in use after: 181.6 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4532.
+Total: 5.468400 ms (FindLiveObjects: 0.518600 ms CreateObjectMapping: 0.398400 ms MarkObjects: 3.469500 ms  DeleteObjects: 1.080400 ms)
+
 ========================================================================
 Received Import Request.
-  Time since last request: 69.454873 seconds.
-  path: Assets/Prefabs/Panzer IV.prefab
-  artifactKey: Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Panzer IV.prefab using Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2365b455509e4f78a3d1bd82cc7e478d') in 0.059897 seconds 
+  Time since last request: 20.883416 seconds.
+  path: Assets/Settings/ForwardRenderer.asset
+  artifactKey: Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/ForwardRenderer.asset using Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fef884b4ca859739b965be00d6bd13f5') in 0.126945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.818806 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e52cbba6024785fe80e61e72fcf4c671') in 0.006974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.472336 seconds.
+  path: Assets/Prefabs/Tanker.prefab
+  artifactKey: Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tanker.prefab using Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e17c3e6b972311c604babd6ba7cba99') in 0.267211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 200.968732 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '892864634590e24fa95b5bf004281522') in 0.003185 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
