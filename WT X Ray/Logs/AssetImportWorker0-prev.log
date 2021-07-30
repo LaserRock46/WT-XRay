@@ -15,11 +15,11 @@ D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52156
+50191
 Successfully changed project path to: D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 119.02 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 133.87 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Unity Directory/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,111 +35,105 @@ Initialize mono
 Mono path[0] = 'C:/Unity Directory/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Unity Directory/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Unity Directory/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56508
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Unity Directory/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003107 seconds.
+Registered in 0.006147 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 126.85 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 140.71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.710 seconds
+- Completed reload, in  1.931 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002517 seconds.
+Registered in 0.002547 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 126.54 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 137.05 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.493 seconds
+- Completed reload, in  1.585 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.89 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4042 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.2 MB.
-System memory in use after: 169.6 MB.
+System memory in use before: 170.5 MB.
+System memory in use after: 169.0 MB.
 
 Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 4483.
-Total: 4.184600 ms (FindLiveObjects: 0.431900 ms CreateObjectMapping: 0.375500 ms MarkObjects: 2.421400 ms  DeleteObjects: 0.954700 ms)
+Total: 3.493500 ms (FindLiveObjects: 0.295700 ms CreateObjectMapping: 0.191400 ms MarkObjects: 2.120900 ms  DeleteObjects: 0.884400 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Models/tracks2.fbx
-  artifactKey: Guid(675cd18cb5ba84f429a3b7bf75c93b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/tracks2.fbx using Guid(675cd18cb5ba84f429a3b7bf75c93b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c27182febc1f4ecdcacdecc4894f49c') in 0.379752 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 446.228231 seconds.
-  path: Assets/Models/Pz. IV Track.prefab
-  artifactKey: Guid(2d63802d57902fb4a872a2201fc5a3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Pz. IV Track.prefab using Guid(2d63802d57902fb4a872a2201fc5a3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07c3c41404c69cee76786f2b80175175') in 0.020733 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.813952 seconds.
-  path: Assets/Prefabs/Pz. IV Track.prefab
-  artifactKey: Guid(2d63802d57902fb4a872a2201fc5a3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Pz. IV Track.prefab using Guid(2d63802d57902fb4a872a2201fc5a3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da60ffac6621d6b59c27f225ca0ed9e0') in 0.010028 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 322.719050 seconds.
-  path: Assets/Models/tracks component.fbx
-  artifactKey: Guid(c1cefa0a0b76d274cad4c9ea10b1558c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/tracks component.fbx using Guid(c1cefa0a0b76d274cad4c9ea10b1558c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '584531300533c1e840c1b3bc782c50e8') in 0.036148 seconds 
+  path: Assets/Scripts/VehicleComponent.cs
+  artifactKey: Guid(16a0813c896010840be9048e89977e8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/VehicleComponent.cs using Guid(16a0813c896010840be9048e89977e8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e673af3db9fc39cbcb07f06eb1693add') in 0.045342 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002399 seconds.
+Registered in 0.002487 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.345 seconds
+- Completed reload, in  1.248 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3920 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.4 MB.
-System memory in use after: 167.8 MB.
+Unloading 3921 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 162.3 MB.
+System memory in use after: 160.8 MB.
 
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4535.
-Total: 4.810400 ms (FindLiveObjects: 0.631800 ms CreateObjectMapping: 0.414900 ms MarkObjects: 2.700100 ms  DeleteObjects: 1.062000 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4486.
+Total: 3.682900 ms (FindLiveObjects: 0.292300 ms CreateObjectMapping: 0.208000 ms MarkObjects: 2.356300 ms  DeleteObjects: 0.825300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 392.219695 seconds.
-  path: Assets/Shaders/X_Ray_Lit.shadergraph
-  artifactKey: Guid(e4339fc8277a60a42b1112826bcf6855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/X_Ray_Lit.shadergraph using Guid(e4339fc8277a60a42b1112826bcf6855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3e0510b492d6ff3d0df8b685f58ea6') in 0.066607 seconds 
+  Time since last request: 108.102417 seconds.
+  path: Assets/HighlightPlus/Documentation
+  artifactKey: Guid(d6b6ed63a44dd4e0b9e9de96d34d9930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HighlightPlus/Documentation using Guid(d6b6ed63a44dd4e0b9e9de96d34d9930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '387d77e8183fa72f39a8b32825ef9c11') in 0.049147 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.918146 seconds.
-  path: Assets/Shaders/X_Ray.shadergraph
-  artifactKey: Guid(670803571e2e50f49861e8923b541c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/X_Ray.shadergraph using Guid(670803571e2e50f49861e8923b541c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '677cd553304c67dd81314c3563781fd5') in 0.007223 seconds 
+  Time since last request: 1.335529 seconds.
+  path: Assets/HighlightPlus/Documentation/Documentation.pdf
+  artifactKey: Guid(f20bfad4614a44fa9bee91947fa06753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HighlightPlus/Documentation/Documentation.pdf using Guid(f20bfad4614a44fa9bee91947fa06753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '380b4b4ed99dab346bcffd2b792099dc') in 0.092504 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 4.712106 seconds.
-  path: Assets/Shaders/X_Ray.shadergraph
-  artifactKey: Guid(e4339fc8277a60a42b1112826bcf6855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/X_Ray.shadergraph using Guid(e4339fc8277a60a42b1112826bcf6855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c640de1076419fdbb6b07566848b13e6') in 0.002210 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 126.764636 seconds.
-  path: Assets/Settings/ForwardRenderer.asset
-  artifactKey: Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Settings/ForwardRenderer.asset using Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd6593329dd0fe5dbd43b56bf229a203') in 0.010703 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003360 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.286 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3921 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 162.4 MB.
+System memory in use after: 160.8 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4489.
+Total: 5.207700 ms (FindLiveObjects: 0.304500 ms CreateObjectMapping: 0.226600 ms MarkObjects: 3.779300 ms  DeleteObjects: 0.895500 ms)
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
