@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5734918299807690871}
   - component: {fileID: 5734918299807690870}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shrapnel Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

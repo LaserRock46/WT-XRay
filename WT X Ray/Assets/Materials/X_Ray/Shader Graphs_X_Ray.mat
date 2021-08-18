@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Alpha: 0.9
+    - Alpha: 0.8
     - Fresnel_Power: 1
     - Noise_Scale: 1
     - Opacity: 0.8
