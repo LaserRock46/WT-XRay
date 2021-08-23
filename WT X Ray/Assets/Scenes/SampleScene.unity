@@ -166,9 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62a9bde5443e6c4a848ad1312d01f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenPosition: {x: 0, y: 0, z: 0}
-  silhouetteViewPosition: {x: 0, y: 0, z: 0}
-  testSorted: 00000000000000000000000000000000
   _camera: {fileID: 201423927}
   _silhouetteMat: {fileID: 2100000, guid: 095c2036cc2b63648b5eed4f99068caa, type: 2}
   _propertyPosition: Position
@@ -176,6 +173,11 @@ MonoBehaviour:
   radiusSpeed: 0
   _silhouetteWorldCenter: {fileID: 1514494279}
   _silhouetteQuad: {fileID: 1795619173}
+  _frustumCornersQuad:
+  - {x: -0.11547006, y: -0.05773503, z: 0.1}
+  - {x: -0.11547006, y: 0.05773503, z: 0.1}
+  - {x: 0.11547006, y: 0.05773503, z: 0.1}
+  - {x: 0.11547006, y: -0.05773503, z: 0.1}
 --- !u!1 &128450033
 GameObject:
   m_ObjectHideFlags: 0
