@@ -11,6 +11,7 @@ namespace Project.Uncategorized
         [Header("Temporary Things", order = 0)]
         public Vector3 screenPosition;
         public Vector3 silhouetteViewPosition;
+        public int[] testSorted = new int[4];
         #endregion
 
         #region Fields
@@ -22,9 +23,8 @@ namespace Project.Uncategorized
         private int _propertyIdPosition;
         private int _propertyIdRadius;
         public float radiusSpeed;
-        public Transform _silhouetteWorldCenter;
-        [SerializeField] private float silhouetteQuadWidth;
-        [SerializeField] private float silhouetteQuadHeight;
+        [SerializeField] private Transform _silhouetteWorldCenter;
+        [SerializeField] private MeshFilter _silhouetteQuad;
 
         #endregion
 
@@ -39,17 +39,21 @@ namespace Project.Uncategorized
         {
             _propertyIdPosition = Shader.PropertyToID(_propertyPosition);
             _propertyIdRadius = Shader.PropertyToID(_propertyRadius);
+            FitQuadInNearPlane();
+        }
+        void FitQuadInNearPlane()
+        {
+            Vector3[] frustumCorners = new Vector3[4];
+            _camera.CalculateFrustumCorners(new Rect(0,0,1,1),0.1f, Camera.MonoOrStereoscopicEye.Mono, frustumCorners);
+            Vector3[] sortedCorners = { frustumCorners[0], frustumCorners[3], frustumCorners[1], frustumCorners[2] };
+            _silhouetteQuad.mesh.vertices = sortedCorners;
+            _silhouetteQuad.mesh.RecalculateBounds();
         }
        void Update()
         {
-            Vector3 screenPosition = _camera.WorldToScreenPoint(_silhouetteWorldCenter.position);
-            float x = Mathf.Lerp(-silhouetteQuadWidth, silhouetteQuadWidth, Mathf.InverseLerp(0, Screen.width, screenPosition.x));
-            float y = Mathf.Lerp(-silhouetteQuadHeight, silhouetteQuadHeight, Mathf.InverseLerp(0, Screen.height, screenPosition.y));
-            Vector3 silhouetteViewPosition = new Vector3(x, y, 0);
-
-            this.screenPosition = screenPosition;
-            this.silhouetteViewPosition = silhouetteViewPosition;
-            _silhouetteMat.SetVector(_propertyIdPosition, _silhouetteWorldCenter.localPosition);
+           
+            _silhouetteMat.SetVector(_propertyIdPosition,Vector3.zero);
+            FitQuadInNearPlane();
         }
         #endregion
     }
