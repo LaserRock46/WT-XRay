@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Image:
-        m_Texture: {fileID: 8400000, guid: ba89a8b549233c549bb5109d1c61a1f4, type: 2}
+        m_Texture: {fileID: 8400000, guid: 75f4f4dfb1479514aacdb68fb22c532e, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -37,14 +37,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Edge: 0.0015
-    - Edge_Silhouette: 0.008
+    - Edge: 0.0006
+    - Edge_Silhouette: 0.003
+    - Edge_Silhouette_Outline: 0.003
     - Inner_Alpha: 0.999
-    - Radius: 0.06
+    - Outer_Edge: 0.0006
+    - Radius: 0.038
     m_Colors:
-    - Color_Edge: {r: 0.34901968, g: 1, b: 0, a: 1}
-    - Color_Inner: {r: 0.34901953, g: 1, b: 0, a: 0.46666667}
-    - Position: {r: 0.04073068, g: -0.03148449, b: 0, a: 0}
+    - Color_Edge: {r: 0.26666668, g: 0.7647059, b: 0, a: 1}
+    - Color_Inner: {r: 0.26670378, g: 0.764151, b: 0, a: 0.2627451}
+    - Color_Outer_Edge: {r: 0.26666665, g: 0.7647059, b: 0, a: 1}
+    - Position: {r: -0.007917772, g: -0.008513185, b: 0, a: 0}
     - Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

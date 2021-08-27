@@ -15,11 +15,11 @@ D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49706
+60644
 Successfully changed project path to: D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 160.15 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 141.89 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Unity Directory/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -35,51 +35,136 @@ Initialize mono
 Mono path[0] = 'C:/Unity Directory/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Unity Directory/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Unity Directory/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56124
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56660
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Unity Directory/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003183 seconds.
+Registered in 0.003279 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 126.65 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 150.59 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.968 seconds
+- Completed reload, in  2.022 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002467 seconds.
+Registered in 0.003023 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 123.59 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 130.39 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.485 seconds
+- Completed reload, in  1.736 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4045 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 172.0 MB.
+Unloading 4044 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.9 MB.
 System memory in use after: 170.4 MB.
 
-Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 4487.
-Total: 4.219800 ms (FindLiveObjects: 0.492300 ms CreateObjectMapping: 0.397400 ms MarkObjects: 2.418900 ms  DeleteObjects: 0.910200 ms)
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 4486.
+Total: 4.946500 ms (FindLiveObjects: 0.614300 ms CreateObjectMapping: 0.459600 ms MarkObjects: 2.934000 ms  DeleteObjects: 0.937100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Materials/Shader Graphs_Silhouette Image Green.mat
-  artifactKey: Guid(095c2036cc2b63648b5eed4f99068caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Shader Graphs_Silhouette Image Green.mat using Guid(095c2036cc2b63648b5eed4f99068caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98328c188e4a01f5f8ad65ffb56a80ef') in 0.417403 seconds 
+  path: Assets/Silhouette Green View.renderTexture
+  artifactKey: Guid(75f4f4dfb1479514aacdb68fb22c532e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Silhouette Green View.renderTexture using Guid(75f4f4dfb1479514aacdb68fb22c532e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8159844cbc7a98423ffe69bcce2e07d0') in 0.156007 seconds 
+========================================================================
+Received Prepare
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.02 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 31 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.7 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 4492.
+Total: 4.625500 ms (FindLiveObjects: 0.299700 ms CreateObjectMapping: 0.198200 ms MarkObjects: 3.252700 ms  DeleteObjects: 0.873800 ms)
+
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/Materials/Shader Graphs_Silhouette Image Grey.mat
-  artifactKey: Guid(204d2574ed07101479ff1420cf0bb930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Shader Graphs_Silhouette Image Grey.mat using Guid(204d2574ed07101479ff1420cf0bb930) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f0731898ffc9c22d2bfb582c8acc369') in 0.019328 seconds 
+  Time since last request: 88.355158 seconds.
+  path: Assets/Silhouette Green View.renderTexture
+  artifactKey: Guid(75f4f4dfb1479514aacdb68fb22c532e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Silhouette Green View.renderTexture using Guid(75f4f4dfb1479514aacdb68fb22c532e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b0aafcce3906cede71bc32c3112954') in 0.049130 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002643 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.541 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3924 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.6 MB.
+System memory in use after: 167.0 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4523.
+Total: 5.040800 ms (FindLiveObjects: 0.376400 ms CreateObjectMapping: 0.289300 ms MarkObjects: 3.188400 ms  DeleteObjects: 1.184800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002765 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.800 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3923 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.6 MB.
+System memory in use after: 167.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4526.
+Total: 8.059400 ms (FindLiveObjects: 0.586700 ms CreateObjectMapping: 0.438400 ms MarkObjects: 4.878900 ms  DeleteObjects: 2.153700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002797 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.532 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3923 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.7 MB.
+System memory in use after: 167.1 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 4529.
+Total: 4.978900 ms (FindLiveObjects: 0.529700 ms CreateObjectMapping: 0.464900 ms MarkObjects: 2.912000 ms  DeleteObjects: 1.070800 ms)
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

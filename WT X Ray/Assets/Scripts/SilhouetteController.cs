@@ -9,6 +9,7 @@ namespace Project.Uncategorized
     {
         #region Temp
         [Header("Temporary Things", order = 0)]
+        public float offset;
 
         #endregion
 
@@ -56,14 +57,14 @@ namespace Project.Uncategorized
         }
         void FitQuadInNearPlane()
         {       
-            _camera.CalculateFrustumCorners(new Rect(0,0,1,1),0.1f, Camera.MonoOrStereoscopicEye.Mono, _frustumCornersQuad);
+            _camera.CalculateFrustumCorners(new Rect(0,0,1,1),offset, Camera.MonoOrStereoscopicEye.Mono, _frustumCornersQuad);
             Vector3[] sortedCorners = { _frustumCornersQuad[0], _frustumCornersQuad[3], _frustumCornersQuad[1], _frustumCornersQuad[2] };
             _silhouetteQuad.mesh.vertices = sortedCorners;
             _silhouetteQuad.mesh.RecalculateBounds();
         }
        void Update()
         {
-           
+            FitQuadInNearPlane();
             _silhouetteMat.SetVector(_propertyIdPosition,WorldToQuad(_silhouetteWorldCenter.position));
         }
         #endregion
