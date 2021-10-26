@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_X_Ray Worn out
+  m_Name: Shader Graphs_X_Ray Worn out 100% Damaged
   m_Shader: {fileID: -6465566751694194690, guid: e4339fc8277a60a42b1112826bcf6855, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4

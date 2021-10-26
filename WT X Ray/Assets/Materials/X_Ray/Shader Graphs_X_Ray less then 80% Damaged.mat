@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_X_Ray 60% Damaged
+  m_Name: Shader Graphs_X_Ray less then 80% Damaged
   m_Shader: {fileID: -6465566751694194690, guid: e4339fc8277a60a42b1112826bcf6855, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -39,5 +39,5 @@ Material:
     - Opacity: 0.8
     - Smoothnes: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.86396533, b: 0.033018887, a: 1}
+    - _Color: {r: 0.8867924, g: 0.48501238, b: 0.16313636, a: 1}
   m_BuildTextureStacks: []
