@@ -13,7 +13,7 @@ namespace Project.Uncategorized
 
         #region Fields
         [Header("Fields", order = 1)]
-        [SerializeField] private GameObject _armorPanelMesh = null;
+        [SerializeField] private MeshRenderer _armorPanelMesh = null;
         [SerializeField] private AnimationCurve _alphaAnimationCurve = default;
         [SerializeField] private Material _armorPanelMat = null;
         [SerializeField] private HighlightPlus.HighlightEffect _whiteOutline;
@@ -26,11 +26,15 @@ namespace Project.Uncategorized
 
 
         #region Methods
-      
+        private void Start()
+        {
+            _armorPanelMesh = GetComponent<MeshRenderer>();
+        }
+
         [ContextMenu("Hit")]
         public void Hit()
         {
-            _armorPanelMesh.SetActive(true);
+            _armorPanelMesh.enabled = true;
             _whiteOutline.Refresh();
             StartCoroutine(DoAnimation());
         }
@@ -47,8 +51,12 @@ namespace Project.Uncategorized
                 yield return null;
             }
 
-            _armorPanelMesh.SetActive(false);
+            _armorPanelMesh.enabled = false;
             yield return null;
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            Hit();
         }
         #endregion
     }
