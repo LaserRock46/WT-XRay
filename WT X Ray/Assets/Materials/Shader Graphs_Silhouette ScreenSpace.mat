@@ -36,8 +36,23 @@ Material:
     - Edge: 0.05
     - Inner_Alpha: 0.999
     - Radius: 0.55
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_Edge: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 0}
     - Color_Inner: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 0}
     - Position: {r: 0.4, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &3514919126821033548
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
