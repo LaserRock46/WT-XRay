@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5890023514804768597}
+  - component: {fileID: 7756135996372680274}
   m_Layer: 6
   m_Name: Pz. IV Track
   m_TagString: Untagged
@@ -26,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 1.235, y: 1.115, z: -0.145}
   m_LocalScale: {x: 5.75, y: 3.5, z: 5.75}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2266967946725691458}
   - {fileID: 5640049996229614213}
@@ -40,6 +42,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!114 &7756135996372680274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183469734397165829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a0813c896010840be9048e89977e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxDurability: 250
+  _currentDurabilityVisuals: 0
+  _currentDurabilitySimulation: 0
+  _componentType: 0
+  _xRayMat:
+  - {fileID: 2100000, guid: 23f93c9e2c26e7847969ae9abe5ac271, type: 2}
+  - {fileID: 2100000, guid: f7a7c7fdad9b212479cff4c0205e363a, type: 2}
+  - {fileID: 2100000, guid: 2439aa79d944e07458515fa7e3c19d86, type: 2}
+  - {fileID: 2100000, guid: f42e99fa3942fdb479d5bb6799b7c44f, type: 2}
+  - {fileID: 2100000, guid: a03cf165157215b4ba8b892a2980fa5b, type: 2}
+  - {fileID: 2100000, guid: a71a856dda71d3a418dc16c423ca6f35, type: 2}
+  - {fileID: 2100000, guid: bb36daafce61af542b3882ba10416973, type: 2}
+  _layerXRay:
+    serializedVersion: 2
+    m_Bits: 64
+  _layerXRayRedOutline:
+    serializedVersion: 2
+    m_Bits: 4096
+  _layerXRayRedAnimated:
+    serializedVersion: 2
+    m_Bits: 8192
+  _redOutline: {fileID: 0}
+  _componentRenderers:
+  - {fileID: 1051615314381404974}
+  - {fileID: 2442972876131124642}
+  - {fileID: 1928204139754789213}
+  - {fileID: 4099420082324504722}
+  - {fileID: 5276891864309921847}
+  - {fileID: 6832030292345847597}
+  - {fileID: 1906439394209400044}
+  - {fileID: 5977832981970890313}
+  - {fileID: 4757048088115576146}
+  - {fileID: 3226270269440998448}
+  _componentSkinnedRenderers: []
+  _simulationController: {fileID: 0}
 --- !u!1 &1528792065684111932
 GameObject:
   m_ObjectHideFlags: 0
@@ -51,6 +100,8 @@ GameObject:
   - component: {fileID: 6004958379053834112}
   - component: {fileID: 1115459901359516154}
   - component: {fileID: 6832030292345847597}
+  - component: {fileID: 558758699774023930}
+  - component: {fileID: 3778344123414545450}
   m_Layer: 6
   m_Name: Pz. IV Track.011
   m_TagString: Untagged
@@ -68,6 +119,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.06018901, y: 0, z: 0.0071184034}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 5
@@ -122,6 +174,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &558758699774023930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528792065684111932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &3778344123414545450
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528792065684111932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4116659651167996199, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &2569087604873303696
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +212,8 @@ GameObject:
   - component: {fileID: 7840479067991773263}
   - component: {fileID: 2371207246107438976}
   - component: {fileID: 1906439394209400044}
+  - component: {fileID: 122643145809798808}
+  - component: {fileID: 8018338342332848278}
   m_Layer: 6
   m_Name: Pz. IV Track.012
   m_TagString: Untagged
@@ -150,6 +231,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.16041362, y: 0, z: 0.007595032}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 6
@@ -204,6 +286,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &122643145809798808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569087604873303696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &8018338342332848278
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569087604873303696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3903716375983282870, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &2923266809222123658
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +324,8 @@ GameObject:
   - component: {fileID: 8221821061473906474}
   - component: {fileID: 2954416025140830665}
   - component: {fileID: 1928204139754789213}
+  - component: {fileID: 8828105408556547511}
+  - component: {fileID: 4531941705867230770}
   m_Layer: 6
   m_Name: Pz. IV Track.008
   m_TagString: Untagged
@@ -232,6 +343,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.23806512, y: 0, z: 0.006887972}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 2
@@ -286,6 +398,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8828105408556547511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923266809222123658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &4531941705867230770
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923266809222123658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4621148894952927271, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &3761295431837880066
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +436,8 @@ GameObject:
   - component: {fileID: 2266967946725691458}
   - component: {fileID: 7453991170119396916}
   - component: {fileID: 1051615314381404974}
+  - component: {fileID: 7979173940554834748}
+  - component: {fileID: 7600436696570156443}
   m_Layer: 6
   m_Name: Pz. IV Track.006
   m_TagString: Untagged
@@ -314,6 +455,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.45070517, y: 0, z: -0.016235529}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 0
@@ -368,6 +510,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7979173940554834748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761295431837880066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &7600436696570156443
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761295431837880066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7971321917956738511, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &4094294048484042219
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +548,8 @@ GameObject:
   - component: {fileID: 321794074076022549}
   - component: {fileID: 8006391404738480337}
   - component: {fileID: 4099420082324504722}
+  - component: {fileID: 4808185431377012180}
+  - component: {fileID: 2195114148490261179}
   m_Layer: 6
   m_Name: Pz. IV Track.009
   m_TagString: Untagged
@@ -396,6 +567,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.13820946, y: 0, z: 0.0053551192}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 3
@@ -450,6 +622,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4808185431377012180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094294048484042219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &2195114148490261179
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094294048484042219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3910870215304130044, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &4102922127872872088
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +660,8 @@ GameObject:
   - component: {fileID: 4947740740959683697}
   - component: {fileID: 4388415530964102826}
   - component: {fileID: 5977832981970890313}
+  - component: {fileID: 1949937192693087576}
+  - component: {fileID: 719080036604281914}
   m_Layer: 6
   m_Name: Pz. IV Track.013
   m_TagString: Untagged
@@ -478,6 +679,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.26070738, y: 0, z: 0.0070100273}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 7
@@ -532,6 +734,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1949937192693087576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4102922127872872088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &719080036604281914
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4102922127872872088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7720649338606781446, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &6539105849610578475
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +772,8 @@ GameObject:
   - component: {fileID: 1426243943033907756}
   - component: {fileID: 6081671137780788415}
   - component: {fileID: 3226270269440998448}
+  - component: {fileID: 5634685248733358338}
+  - component: {fileID: 2809680720408953611}
   m_Layer: 6
   m_Name: Pz. IV Track.015
   m_TagString: Untagged
@@ -560,6 +791,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.47797847, y: 0, z: -0.0018803327}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 9
@@ -614,6 +846,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5634685248733358338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539105849610578475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &2809680720408953611
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539105849610578475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1131000690728535297, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &7988325886849907594
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +884,8 @@ GameObject:
   - component: {fileID: 5640049996229614213}
   - component: {fileID: 1223524496871745191}
   - component: {fileID: 2442972876131124642}
+  - component: {fileID: 4693029472575160965}
+  - component: {fileID: 5473755934889202100}
   m_Layer: 6
   m_Name: Pz. IV Track.007
   m_TagString: Untagged
@@ -642,6 +903,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.347659, y: 0, z: -0.0033242253}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 1
@@ -696,6 +958,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4693029472575160965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988325886849907594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &5473755934889202100
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988325886849907594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2163720331581797241, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &8546023542819295659
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +996,8 @@ GameObject:
   - component: {fileID: 8135254612830102143}
   - component: {fileID: 8587190316050165521}
   - component: {fileID: 4757048088115576146}
+  - component: {fileID: 3809701052410110729}
+  - component: {fileID: 1954860656802927858}
   m_Layer: 6
   m_Name: Pz. IV Track.014
   m_TagString: Untagged
@@ -724,6 +1015,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.37276328, y: 0, z: 0.0057653035}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 8
@@ -778,6 +1070,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3809701052410110729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546023542819295659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &1954860656802927858
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546023542819295659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5866490897265520547, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}
 --- !u!1 &9100765251820424701
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +1108,8 @@ GameObject:
   - component: {fileID: 9077493819694280039}
   - component: {fileID: 4941795244253076703}
   - component: {fileID: 5276891864309921847}
+  - component: {fileID: 3193998654611396322}
+  - component: {fileID: 957617408608486272}
   m_Layer: 6
   m_Name: Pz. IV Track.010
   m_TagString: Untagged
@@ -806,6 +1127,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.03910637, y: 0, z: 0.0075616087}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5890023514804768597}
   m_RootOrder: 4
@@ -860,3 +1182,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3193998654611396322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100765251820424701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7756135996372680274}
+--- !u!64 &957617408608486272
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100765251820424701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5142542848514511598, guid: eab92acb61ce1c443ade90410fb0d500, type: 3}

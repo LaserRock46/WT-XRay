@@ -14,17 +14,20 @@ namespace Project.Uncategorized
         #region Fields
         [Header("Fields", order = 1)]
         [SerializeField] private int _maxDurability;
-        [SerializeField] private int _currentDurability;
+        [SerializeField] private int _currentDurabilityVisuals;
+        [SerializeField] private int _currentDurabilitySimulation;
+        public enum DamageMode { Simulation, Visualisation}
         public enum ComponentType {Other, Ammo, Crew, Fuel}
         [SerializeField] private ComponentType _componentType;
 
         [SerializeField] private Material[] _xRayMat;
-        [SerializeField] private LayerMask _layerXRay;
-        [SerializeField] private LayerMask _layerXRayRedOutline;
-        [SerializeField] private LayerMask _layerXRayRedAnimated;
+        private string _layerXRay = "X Ray";
+        private string _layerXRayRedOutline = "X Ray + Red Outline";
+        private string _layerXRayRedAnimated = "X Ray + Red Outline Animated";
         [SerializeField] private HighlightPlus.HighlightEffect _redOutline;
 
         [SerializeField] private MeshRenderer[] _componentRenderers;
+        [SerializeField] private SkinnedMeshRenderer[] _componentSkinnedRenderers;
 
         [SerializeField] private SimulationController _simulationController;
         #endregion
@@ -39,36 +42,35 @@ namespace Project.Uncategorized
             switch ((int)damagePercentage)
             {
                 case 0:
-                    layer = _layerXRay;
+                    layer = LayerMask.NameToLayer(_layerXRay);
                     xRayMatIndex = 0;
                     break;
                 case int p when p < 20:
-                    layer = _layerXRay;
+                    layer = LayerMask.NameToLayer(_layerXRay);
                     xRayMatIndex = 1;
                     break;
                 case int p when p < 40:
-                    layer = _layerXRay;
+                    layer = LayerMask.NameToLayer(_layerXRay);
                     xRayMatIndex = 2;
                     break;
                 case int p when p < 60:
-                    layer = _layerXRay;
+                    layer = LayerMask.NameToLayer(_layerXRay);
                     xRayMatIndex = 3;
                     break;
                 case int p when p < 80:
-                    layer = _layerXRay;
+                    layer = LayerMask.NameToLayer(_layerXRay);
                     xRayMatIndex = 4;
                     break;
                 case int p when p < 100:
-                    layer = _layerXRay;
+                    layer = LayerMask.NameToLayer(_layerXRay);
                     xRayMatIndex = 5;
                     break;
                 case 100:
-                    layer = _layerXRayRedAnimated;
+                    layer = LayerMask.NameToLayer(_layerXRayRedAnimated);
                     xRayMatIndex = 6;
                     break;
             }
-
-
+           
             return (layer, xRayMatIndex);
         }
         #endregion
@@ -76,31 +78,50 @@ namespace Project.Uncategorized
 
 
         #region Methods
+        private void Start()
+        {
+            ResetComponent();
+        }
         public void ResetComponent()
         {
-            _currentDurability = _maxDurability;
+            _currentDurabilityVisuals = _maxDurability;
+            _currentDurabilitySimulation = _maxDurability;
             UpdateVisuals();
 
         }
         void UpdateVisuals()
         {
-            var layerAndMat = GetLayerAndMatByDurability(_currentDurability);
-            foreach (MeshRenderer meshRenderer in _componentRenderers)
-            {
-                meshRenderer.material =_xRayMat[layerAndMat.xRayMatIndex];
-                meshRenderer.gameObject.layer = layerAndMat.layer;
-            }
+            var layerAndMat = GetLayerAndMatByDurability(_currentDurabilityVisuals);
+          
+                foreach (MeshRenderer meshRenderer in _componentRenderers)
+                {
+                    meshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
+                    meshRenderer.gameObject.layer = layerAndMat.layer;
+                }    
+                foreach (SkinnedMeshRenderer skinnedMeshRenderer in _componentSkinnedRenderers)
+                {
+                    skinnedMeshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
+                    skinnedMeshRenderer.gameObject.layer = layerAndMat.layer;
+                }
+            
             _redOutline.Refresh();
         }
-        public void Hit(int damage)
+        public void Hit(int damage, DamageMode damageMode)
         {
-            _currentDurability = Mathf.Clamp(_currentDurability - damage, 0, _maxDurability);
-            UpdateVisuals();
-            Result();
+            if (damageMode == DamageMode.Visualisation)
+            {
+                _currentDurabilityVisuals = Mathf.Clamp(_currentDurabilityVisuals - damage, 0, _maxDurability);
+                UpdateVisuals();
+            }
+            else
+            {
+                _currentDurabilitySimulation = Mathf.Clamp(_currentDurabilitySimulation - damage, 0, _maxDurability);
+                Result();
+            }
         }
         void Result()
         {
-            if(_currentDurability == 0)
+            if(_currentDurabilitySimulation == 0)
             {
                 _simulationController.NotifyAboutDestroyedComponent(_componentType);
             }

@@ -13,10 +13,11 @@ namespace Project.Uncategorized
 
         #region Fields
         [Header("Fields", order = 1)]
-        [SerializeField] private MeshRenderer _armorPanelMesh = null;
+        private MeshRenderer _armorPanelMesh = null;
         [SerializeField] private AnimationCurve _alphaAnimationCurve = default;
         [SerializeField] private Material _armorPanelMat = null;
         [SerializeField] private HighlightPlus.HighlightEffect _whiteOutline;
+        [SerializeField] private float _outlineWidth = 0.45f;
         #endregion
 
         #region Functions
@@ -40,6 +41,7 @@ namespace Project.Uncategorized
         }
         private IEnumerator DoAnimation()
         {
+            _whiteOutline.outlineWidth = _outlineWidth;
 
             float time = 0f;
             while (time < _alphaAnimationCurve.keys[_alphaAnimationCurve.length - 1].time)

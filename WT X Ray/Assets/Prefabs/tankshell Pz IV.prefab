@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 2.4850855, z: 0}
   m_LocalScale: {x: 0.4708616, y: 1.3925574, z: 0.4708616}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6235875739257504830}
   m_RootOrder: 0
@@ -110,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -1.3645011, z: 0}
   m_LocalScale: {x: 0.519, y: 2.4661837, z: 0.519}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6235875739257504830}
   m_RootOrder: 1
@@ -174,6 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6235875739257504830}
   - component: {fileID: 5390225616520396897}
+  - component: {fileID: 7136723014037518101}
+  - component: {fileID: 213064791239173311}
   m_Layer: 12
   m_Name: tankshell Pz IV
   m_TagString: Untagged
@@ -191,6 +195,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.648, y: 0, z: -0.1}
   m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3796024650292953267}
   - {fileID: 7582436980078737498}
@@ -211,3 +216,54 @@ CapsuleCollider:
   m_Height: 7.77
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7136723014037518101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755847348286119556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a0813c896010840be9048e89977e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxDurability: 50
+  _currentDurabilityVisuals: 50
+  _currentDurabilitySimulation: 50
+  _componentType: 1
+  _xRayMat:
+  - {fileID: 2100000, guid: 23f93c9e2c26e7847969ae9abe5ac271, type: 2}
+  - {fileID: 2100000, guid: f7a7c7fdad9b212479cff4c0205e363a, type: 2}
+  - {fileID: 2100000, guid: 2439aa79d944e07458515fa7e3c19d86, type: 2}
+  - {fileID: 2100000, guid: f42e99fa3942fdb479d5bb6799b7c44f, type: 2}
+  - {fileID: 2100000, guid: a03cf165157215b4ba8b892a2980fa5b, type: 2}
+  - {fileID: 2100000, guid: a71a856dda71d3a418dc16c423ca6f35, type: 2}
+  - {fileID: 2100000, guid: bb36daafce61af542b3882ba10416973, type: 2}
+  _layerXRay:
+    serializedVersion: 2
+    m_Bits: 64
+  _layerXRayRedOutline:
+    serializedVersion: 2
+    m_Bits: 4096
+  _layerXRayRedAnimated:
+    serializedVersion: 2
+    m_Bits: 8192
+  _redOutline: {fileID: 0}
+  _componentRenderers:
+  - {fileID: 5213986956420721108}
+  - {fileID: 3109732523088846721}
+  _simulationController: {fileID: 0}
+--- !u!114 &213064791239173311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755847348286119556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17d27e8215de8d4fb190ea5f39d0918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleComponent: {fileID: 7136723014037518101}
