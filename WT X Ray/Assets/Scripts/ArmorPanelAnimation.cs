@@ -58,7 +58,10 @@ namespace Project.Uncategorized
         }
         private void OnCollisionEnter(Collision collision)
         {
-            Hit();
+            if (collision.gameObject.CompareTag("Projectile"))
+            {
+                Hit();
+            }
         }
         #endregion
     }

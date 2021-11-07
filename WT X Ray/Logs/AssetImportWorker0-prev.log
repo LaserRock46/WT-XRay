@@ -15,7 +15,7 @@ D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59335
+65421
 Successfully changed project path to: D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/GamedevShit/Unity Smietnik/Github/WT-XRay/WT X Ray
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 168.00 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 128.24 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.0f1 (4bf1ec4b23c9)
 [Subsystems] Discovering subsystems at path C:/Unity Directory/2021.2.0f1/Editor/Data/Resources/UnitySubsystems
@@ -63,76 +63,76 @@ Initialize mono
 Mono path[0] = 'C:/Unity Directory/2021.2.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Unity Directory/2021.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Unity Directory/2021.2.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56312
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Unity Directory/2021.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008416 seconds.
+Registered in 0.010009 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 180.70 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 145.39 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.376 seconds
+- Completed reload, in  1.220 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1376ms)
-		BeginReloadAssembly (128ms)
+	ReloadAssembly (1221ms)
+		BeginReloadAssembly (108ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (754ms)
-			LoadAssemblies (123ms)
+		EndReloadAssembly (653ms)
+			LoadAssemblies (103ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (152ms)
+			SetupTypeCache (126ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (479ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (413ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (181ms)
+				RefreshPlugins (145ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (213ms)
-				ProcessInitializeOnLoadMethodAttributes (71ms)
+				ProcessInitializeOnLoadAttributes (192ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007198 seconds.
+Registered in 0.006351 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 130.73 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 130.56 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.498 seconds
+- Completed reload, in  2.499 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2499ms)
-		BeginReloadAssembly (238ms)
+	ReloadAssembly (2500ms)
+		BeginReloadAssembly (254ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (2127ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (2116ms)
 			LoadAssemblies (119ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (343ms)
+			SetupTypeCache (327ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (80ms)
-			SetupLoadedEditorAssemblies (1454ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (1460ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (14ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (131ms)
-				BeforeProcessingInitializeOnLoad (141ms)
-				ProcessInitializeOnLoadAttributes (1056ms)
-				ProcessInitializeOnLoadMethodAttributes (98ms)
-				AfterProcessingInitializeOnLoad (15ms)
+				BeforeProcessingInitializeOnLoad (138ms)
+				ProcessInitializeOnLoadAttributes (1070ms)
+				ProcessInitializeOnLoadMethodAttributes (94ms)
+				AfterProcessingInitializeOnLoad (14ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
@@ -140,12 +140,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.20 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.16 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5130 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (347.0 KB). Loaded Objects now: 5606.
-Memory consumption went from 223.0 MB to 222.7 MB.
-Total: 4.953400 ms (FindLiveObjects: 0.533400 ms CreateObjectMapping: 0.604300 ms MarkObjects: 3.636000 ms  DeleteObjects: 0.178200 ms)
+Unloading 33 unused Assets / (348.3 KB). Loaded Objects now: 5604.
+Memory consumption went from 223.1 MB to 222.8 MB.
+Total: 4.308500 ms (FindLiveObjects: 0.453700 ms CreateObjectMapping: 0.349700 ms MarkObjects: 3.321100 ms  DeleteObjects: 0.182500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -160,7 +160,854 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 104342.851903 seconds.
-  path: Assets/Scripts/VehicleComponent.cs
-  artifactKey: Guid(16a0813c896010840be9048e89977e8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/VehicleComponent.cs using Guid(16a0813c896010840be9048e89977e8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d1151dcb5c0008f232b9a1ccf850a4c') in 0.159044 seconds 
+  Time since last request: 692.176262 seconds.
+  path: Assets/Prefabs/Pz. IV Track.prefab
+  artifactKey: Guid(41e7ae12f5272dc42824bd83e5352342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Pz. IV Track.prefab using Guid(41e7ae12f5272dc42824bd83e5352342) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Attempting to get Camera relative temporary RenderTexture (width || height <= 0) via a CommandBuffer  in a Sriptable Render Pipeline.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:ExecuteCommandBuffer_Internal (UnityEngine.Rendering.CommandBuffer)
+UnityEngine.Rendering.ScriptableRenderContext:ExecuteCommandBuffer (UnityEngine.Rendering.CommandBuffer)
+UnityEngine.Rendering.Universal.Internal.CopyColorPass:Execute (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/Passes/CopyColorPass.cs:111)
+UnityEngine.Rendering.Universal.ScriptableRenderer:ExecuteRenderPass (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.ScriptableRenderPass,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/ScriptableRenderer.cs:962)
+UnityEngine.Rendering.Universal.ScriptableRenderer:ExecuteBlock (int,UnityEngine.Rendering.Universal.ScriptableRenderer/RenderBlocks&,UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/ScriptableRenderer.cs:921)
+UnityEngine.Rendering.Universal.ScriptableRenderer:Execute (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/ScriptableRenderer.cs:725)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:414)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[ line 0]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+ -> (artifact id: '2e8eb6bfb5c152e100405011dee3c8a9') in 0.414683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Prefabs/KV-2.prefab
+  artifactKey: Guid(f281ea66475e0334388c765816ab8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/KV-2.prefab using Guid(f281ea66475e0334388c765816ab8bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '916cfcb16625356b037394e47615d70c') in 1.575979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Prefabs/KV-2 Track.prefab
+  artifactKey: Guid(d5bc65827aa5d164e9cdc2faba53b2e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/KV-2 Track.prefab using Guid(d5bc65827aa5d164e9cdc2faba53b2e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ad435d510184e339cdd37af3906eddc') in 0.024019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Prefabs/Panzer IV.prefab
+  artifactKey: Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Panzer IV.prefab using Guid(3d8f1538cee3314449996a84d542e316) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
+ -> (artifact id: '70a89b52435d1dfe529b2b7a9653c63d') in 0.123203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Prefabs/Tanker.prefab
+  artifactKey: Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tanker.prefab using Guid(9307118ff8ff4fb4ea853e655651a03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06cd34efb9e32366f5bb08b81fee9595') in 0.036349 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Prefabs/tankshell Pz IV.prefab
+  artifactKey: Guid(ee07b530463a0004a948fb2a8a34adbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/tankshell Pz IV.prefab using Guid(ee07b530463a0004a948fb2a8a34adbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25e3dc728c0e4304050ac4f7f922dafc') in 0.022277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Prefabs/turret ring.prefab
+  artifactKey: Guid(3a3b2516ff780ed4ea28788ec7857eb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/turret ring.prefab using Guid(3a3b2516ff780ed4ea28788ec7857eb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b21e173be9c29dc03faad7527782ae9e') in 0.050831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 329.231482 seconds.
+  path: Assets/Scripts/ShrapnelController.cs
+  artifactKey: Guid(e18fdfa8a6b42c147912d7f3929cd6f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShrapnelController.cs using Guid(e18fdfa8a6b42c147912d7f3929cd6f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dbd73ae63a067a8f849e817336e2a11') in 0.014617 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006296 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.75 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.945 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1946ms)
+		BeginReloadAssembly (190ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (54ms)
+		EndReloadAssembly (1631ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (328ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (864ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (146ms)
+				ProcessInitializeOnLoadAttributes (591ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4976 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (309.8 KB). Loaded Objects now: 5666.
+Memory consumption went from 220.1 MB to 219.8 MB.
+Total: 3.762300 ms (FindLiveObjects: 0.443800 ms CreateObjectMapping: 0.271200 ms MarkObjects: 2.983500 ms  DeleteObjects: 0.062800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007125 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.066 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2067ms)
+		BeginReloadAssembly (176ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (50ms)
+		EndReloadAssembly (1749ms)
+			LoadAssemblies (122ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (359ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (836ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (240ms)
+				ProcessInitializeOnLoadAttributes (474ms)
+				ProcessInitializeOnLoadMethodAttributes (83ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (22ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4970 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (309.8 KB). Loaded Objects now: 5668.
+Memory consumption went from 219.6 MB to 219.3 MB.
+Total: 4.096300 ms (FindLiveObjects: 0.475400 ms CreateObjectMapping: 0.304800 ms MarkObjects: 3.250000 ms  DeleteObjects: 0.065000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2879.435777 seconds.
+  path: Assets/Scripts/Projectile.cs
+  artifactKey: Guid(7c8080cca0df865419d4d47eafe09e60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Projectile.cs using Guid(7c8080cca0df865419d4d47eafe09e60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a36c0ffb4c5335d192da0b72913a8dd7') in 0.064277 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.038559 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.18 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.885 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1888ms)
+		BeginReloadAssembly (273ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (16ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (107ms)
+		EndReloadAssembly (1474ms)
+			LoadAssemblies (141ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (348ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (732ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (110ms)
+				ProcessInitializeOnLoadAttributes (497ms)
+				ProcessInitializeOnLoadMethodAttributes (90ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (26ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.10 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4970 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (309.8 KB). Loaded Objects now: 5670.
+Memory consumption went from 219.6 MB to 219.3 MB.
+Total: 4.886800 ms (FindLiveObjects: 0.527400 ms CreateObjectMapping: 0.605000 ms MarkObjects: 3.652800 ms  DeleteObjects: 0.100400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 16.282107 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(b679160ed369e9f4593904e7dd89bfe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(b679160ed369e9f4593904e7dd89bfe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39a2a75491b728a2645b57d4dcb66180') in 0.026026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.151773 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e03ba140f368ce7796c1a1d09d1028f') in 0.040145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.207271 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+ -> (artifact id: 'b64b143834763430ea379343d43846be') in 0.282729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.912648 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9821fc66d5f72f6fc784ec5ff32fc98d') in 0.027352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.587301 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef6b8506d75babc5940eeac1c9f06fc5') in 0.052940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.764145 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad732c97256cfcd5a7979b6f68790438') in 0.029677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 198.068748 seconds.
+  path: Assets/Materials/Shader Graphs_Silhouette Image Green.mat
+  artifactKey: Guid(095c2036cc2b63648b5eed4f99068caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shader Graphs_Silhouette Image Green.mat using Guid(095c2036cc2b63648b5eed4f99068caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d5da532e9a209c61141e86ae2a13f0') in 0.114025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.434151 seconds.
+  path: Assets/Materials/X_Ray_View_Mat.mat
+  artifactKey: Guid(70933a7a38ddafd4a85f4ae52c9dbbd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/X_Ray_View_Mat.mat using Guid(70933a7a38ddafd4a85f4ae52c9dbbd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8b46189f7fa27fa881c41398500788e') in 0.076130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 167.926664 seconds.
+  path: Assets/Materials/Shell Mat.mat
+  artifactKey: Guid(795e43dccaf6f774aa57dcf7c38e2945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shell Mat.mat using Guid(795e43dccaf6f774aa57dcf7c38e2945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da859b2ce423805933ce4a0b242a00dc') in 0.041040 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.025228 seconds.
+  path: Assets/Materials/Shell Mat 1.mat
+  artifactKey: Guid(e1d48b71150057f46a45f4d3fbd177ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shell Mat 1.mat using Guid(e1d48b71150057f46a45f4d3fbd177ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba8db1fcbeaf51d438cc1869c51520d3') in 0.020036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Materials/Shell Mat.mat
+  artifactKey: Guid(795e43dccaf6f774aa57dcf7c38e2945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shell Mat.mat using Guid(795e43dccaf6f774aa57dcf7c38e2945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ddef75ef0ca522e495281d85eabba12') in 0.012698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.619094 seconds.
+  path: Assets/Materials/Shell Mat 2.mat
+  artifactKey: Guid(e1d48b71150057f46a45f4d3fbd177ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shell Mat 2.mat using Guid(e1d48b71150057f46a45f4d3fbd177ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e59790aae0ca0a1e7d140bec1a836366') in 0.019336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 175.234069 seconds.
+  path: Assets/Settings/ForwardRenderer.asset
+  artifactKey: Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Settings/ForwardRenderer.asset using Guid(4a8e21d5c33334b11b34a596161b9360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71bde75ed45f41478b73b40acb6a8f68') in 0.011532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.687749 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '178e98c82cc223f54add09b947cfe4b1') in 0.013404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 47.332694 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c82669f4e876dd9ebe0e89dd0a88f631') in 0.016939 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.217054 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b42e854695c3e2d958f632792aead150') in 0.014271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.849741 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5a7a041fe4245a2d64cc39d3737876e') in 0.027992 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006365 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.126 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2127ms)
+		BeginReloadAssembly (182ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		EndReloadAssembly (1809ms)
+			LoadAssemblies (118ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (448ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (879ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (31ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (226ms)
+				ProcessInitializeOnLoadAttributes (516ms)
+				ProcessInitializeOnLoadMethodAttributes (89ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.13 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4970 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 28 unused Assets / (309.9 KB). Loaded Objects now: 5745.
+Memory consumption went from 220.1 MB to 219.8 MB.
+Total: 5.182000 ms (FindLiveObjects: 0.490200 ms CreateObjectMapping: 0.559200 ms MarkObjects: 4.057700 ms  DeleteObjects: 0.073800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 10.661126 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.0/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+ -> (artifact id: '9d7fa0a4fbb9dedde7f49f4dcf908210') in 0.263833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.937981 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f41eecb98f5e75f6b06d5f530298c9') in 0.044171 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.602243 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ca4f661346b4ca5114dd1f2c940025a') in 0.011975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.849521 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18b9486f4ea77234f4ad7e4457fcf9db') in 0.012367 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.543054 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc5767d3c64943fc5400ece741fe4b1f') in 0.015075 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.182064 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe66debafd94312494b9f9318833e018') in 0.029244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.555073 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '874aca024efeef6799bdc24480127926') in 0.027353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.810352 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a85754aea2c55e74375ff13ac12ad760') in 0.015333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.946130 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2bfa671cee52b59ddc2574cc3d7a538') in 0.014804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.908995 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37099b82f3c1405a4712c14cd87bef4d') in 0.017190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.361667 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b56409fed4d773072da2c76ce2c2d423') in 0.043937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.684578 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a7c7d6abc6396987789ccda8d774dd') in 0.038266 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.067900 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84d05a029ea3d44daa1a45b6c79b5df3') in 0.015769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.661511 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '811f25ab41ec89e6fc1d71977dd2a053') in 0.011466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.932424 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3da85c8f14c9ce47c3902f3e9c3064ab') in 0.056795 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 220.545219 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e9057c2a89428d8c6903b7f185bb0de') in 0.078656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.882205 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aff7c424d6e2b87c6e48522c22030d29') in 0.159539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.723875 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f212a532943eb8aaf984a773d9312574') in 0.017118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.620496 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28060ad4be6eb0b2e2e134cbd495830f') in 0.054487 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.508834 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb41415f7ab17b1397f04e79f87c659a') in 0.052658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.124731 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c421849554f8f9219fff0c9864c2b3cd') in 0.013425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.867719 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '093c1475b68f1eee45bc1be5da55eecd') in 0.069426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.621939 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ec94f416a6202e07ba76328a6f73cbd') in 0.012478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.083664 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '669b762e0bf1ef2403f1ea04fc3bbb24') in 0.061982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.606441 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9caa7b58f1982c966c11f0537a91ef53') in 0.012035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.075144 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044ca030cb72ebf3a8ec8e757c81b75e') in 0.014068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.383579 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09f2b5e7f297a924a9d21d184430c4e8') in 0.012021 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.905586 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5f5b832a97c84f0612d53b7986ae9ff') in 0.012743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.716796 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3148b7d1f020b52b614f9e96bd5ce46b') in 0.050140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.133862 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85581c0b4de5ae720406ee8d5eb6fb2d') in 0.018646 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.050875 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8112fa4e5fb98e01992997b3ecce2478') in 0.054391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.767065 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7881e6718412b784eb796b360f0bec3') in 0.011073 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.669817 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478230c7665bb93990e3eff660b7b7b2') in 0.014349 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.178620 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab372c174aaa53a96bfc30e865db2cee') in 0.206064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.087261 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ad4fb14390ca060ebf264763c6242bd') in 0.137139 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.248543 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e021e950de8276a7d77dec7bcc8a6564') in 0.074919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.244602 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f21305aaafd32b65020cd58121e6a47') in 0.015605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.873484 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ceb980bd770fc98fff232546c59e362') in 0.014228 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.456794 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf05fbbc35cd0ec5017f6438075f6fed') in 0.042711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.682986 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7988584a9a1dd1453968c288a0b1c605') in 0.013489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.002559 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '001de13542b1ab6ca256e5bdc16b3f15') in 0.014242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.611964 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '751a941fa7978ee482fb7d79f4ec59f3') in 0.079617 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.539484 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fe96d26fb158030e134a7f123a104fb') in 0.029819 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.608381 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da8debc5a5788ad6b76908194a82d1ad') in 0.012739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.195344 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d465d4eaa5d319cb3382a8b49719f3') in 0.014448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.906612 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e46fb30587a3971078ee071ca103b2a') in 0.058153 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 159.078366 seconds.
+  path: Assets/Prefabs/Shrapnel Prefab.prefab
+  artifactKey: Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Shrapnel Prefab.prefab using Guid(ba58a5edcd7fb4a4ea15616ff92514d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd22717ea1024be88e1d436baaaae5a0b') in 0.102366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 179.453436 seconds.
+  path: Assets/Prefabs/Projectile Prefab.prefab
+  artifactKey: Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Projectile Prefab.prefab using Guid(bde6ca5869088d64c95386fd86dd9502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b75ff2a8d23257543d34c78217b17c25') in 0.021789 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006109 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GamedevShit\Unity Smietnik\Github\WT-XRay\WT X Ray\Library\PackageCache\com.unity.visualscripting@1.7.2\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.429 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2430ms)
+		BeginReloadAssembly (186ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (60ms)
+		EndReloadAssembly (2105ms)
+			LoadAssemblies (118ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (445ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (1024ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (29ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (287ms)
+				ProcessInitializeOnLoadAttributes (608ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4970 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 29 unused Assets / (310.6 KB). Loaded Objects now: 5788.
+Memory consumption went from 220.2 MB to 219.9 MB.
+Total: 3.950200 ms (FindLiveObjects: 0.477700 ms CreateObjectMapping: 0.291400 ms MarkObjects: 3.110800 ms  DeleteObjects: 0.069100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
