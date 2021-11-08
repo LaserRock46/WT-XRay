@@ -22,6 +22,9 @@ namespace Project.Uncategorized
 
         [SerializeField] private ConstantForce _constantForce;
         [SerializeField] private Rigidbody _rigidbody;
+
+        private int _shrapnelDamage;
+        private VehicleComponent.DamageMode _damageMode;
         #endregion
 
         #region Functions
@@ -40,14 +43,22 @@ namespace Project.Uncategorized
             
         }
        
-        public void Shot(float force)
+        public void Shot(VehicleComponent.DamageMode damageMode,float force, int shrapnelDamage = 15)
         {
-            _shrapnelTrail.Clear();
-            transform.localPosition = Vector3.zero;
-            _rigidbody.velocity = Vector3.zero;
+            gameObject.SetActive(true);        
             _constantForce.force = force * transform.forward;
-            
-            SetTrailGradient();
+            _shrapnelDamage = shrapnelDamage;
+            _damageMode = damageMode;
+
+            if (damageMode == VehicleComponent.DamageMode.Visualisation)
+            {
+                _shrapnelTrail.gameObject.SetActive(true);
+                SetTrailGradient();
+            }
+            else
+            {
+                _shrapnelTrail.gameObject.SetActive(false);
+            }
         } 
         void SetTrailGradient()
         {
@@ -63,8 +74,38 @@ namespace Project.Uncategorized
                 {
                     _shrapnelTrail.colorGradient = _componentDamageTrail;
                 }
+                else
+                {
+                    ResetShrapnel();
+                }
+            }
+            else
+            {
+                ResetShrapnel();
             }
 
+        }      
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
+            {
+                Hit(vehicleComponentCollider);
+            }
+            if (other.gameObject.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
+            {
+                ResetShrapnel();
+            }
+        }
+        void Hit(VehicleComponentCollider vehicleComponentCollider)
+        {
+            vehicleComponentCollider.vehicleComponent.Hit(_shrapnelDamage,_damageMode);
+        }
+        void ResetShrapnel()
+        {
+            _rigidbody.velocity = Vector3.zero;
+            transform.localPosition = Vector3.zero;
+            _shrapnelTrail.Clear();
+            gameObject.SetActive(false);
         }
         #endregion
     }

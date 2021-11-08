@@ -16,6 +16,10 @@ namespace Project.Uncategorized
         [SerializeField] private ShrapnelController[] _shrapnels;
         [SerializeField] private float _shrapnelForce = 0.5f;
         [SerializeField] private float _projectileForce = 1f;
+        [SerializeField] private float _forceSimulation = 1000f;
+        [SerializeField] private int _shrapnelDamage = 15;
+        [SerializeField] private int _projectileDamage = 500;
+        [SerializeField] private VehicleComponent.DamageMode _damageMode;
         #endregion
 
         #region Functions
@@ -35,13 +39,20 @@ namespace Project.Uncategorized
         }      
         [ContextMenu("Test Projectile")]
         void TestProjectile()
-        {
+        {          
             foreach (ShrapnelController shrapnel in _shrapnels)
             {
-                shrapnel.Shot(_shrapnelForce);
+                shrapnel.Shot(_damageMode,_damageMode == VehicleComponent.DamageMode.Visualisation ? _shrapnelForce: _forceSimulation,_shrapnelDamage);
             }
         }
+        public void Shot()
+        {
 
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            
+        }
 
         #endregion
     }

@@ -23,8 +23,9 @@ namespace Project.Uncategorized
         [SerializeField] private Material[] _xRayMat;
         private string _layerXRay = "X Ray";
         private string _layerXRayRedOutline = "X Ray + Red Outline";
-        private string _layerXRayRedAnimated = "X Ray + Red Outline Animated";
-        [SerializeField] private HighlightPlus.HighlightEffect _redOutline;
+        private string _layerXRayRedAnimated = "X Ray + Red Outline Animated";      
+        [SerializeField] private OutlineRefresh _redOutlineRefresh;
+        private bool _outlineEnabled = false;
 
         [SerializeField] private MeshRenderer[] _componentRenderers;
         [SerializeField] private SkinnedMeshRenderer[] _componentSkinnedRenderers;
@@ -103,15 +104,28 @@ namespace Project.Uncategorized
                     skinnedMeshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
                     skinnedMeshRenderer.gameObject.layer = layerAndMat.layer;
                 }
-            
-            _redOutline.Refresh();
+            if (_currentDurabilityVisuals == 0 && _outlineEnabled == false)
+            {
+                _outlineEnabled = true;
+                _redOutlineRefresh.NeedRefresh();
+             
+            }
+            else if(_currentDurabilityVisuals == _maxDurability && _outlineEnabled == true)
+            {
+                _outlineEnabled = false;
+                _redOutlineRefresh.NeedRefresh();
+               
+            }
         }
         public void Hit(int damage, DamageMode damageMode)
         {
             if (damageMode == DamageMode.Visualisation)
             {
-                _currentDurabilityVisuals = Mathf.Clamp(_currentDurabilityVisuals - damage, 0, _maxDurability);
-                UpdateVisuals();
+                if (_currentDurabilityVisuals != 0)
+                {
+                    _currentDurabilityVisuals = Mathf.Clamp(_currentDurabilityVisuals - damage, 0, _maxDurability);
+                    UpdateVisuals();
+                }
             }
             else
             {

@@ -17,6 +17,7 @@ namespace Project.Uncategorized
         [SerializeField] private AnimationCurve _alphaAnimationCurve = default;
         [SerializeField] private Material _armorPanelMat = null;
         [SerializeField] private HighlightPlus.HighlightEffect _whiteOutline;
+        [SerializeField] private OutlineRefresh _outlineRefresh;
         [SerializeField] private float _outlineWidth = 0.45f;
         #endregion
 
@@ -36,7 +37,7 @@ namespace Project.Uncategorized
         public void Hit()
         {
             _armorPanelMesh.enabled = true;
-            _whiteOutline.Refresh();
+            _outlineRefresh.NeedRefresh();
             StartCoroutine(DoAnimation());
         }
         private IEnumerator DoAnimation()
@@ -58,7 +59,7 @@ namespace Project.Uncategorized
         }
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Projectile"))
+            if (collision.gameObject.TryGetComponent(out Projectile projectile))
             {
                 Hit();
             }
