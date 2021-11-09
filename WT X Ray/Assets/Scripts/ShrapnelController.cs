@@ -12,9 +12,7 @@ namespace Project.Uncategorized
         #endregion
 
         #region Fields
-        [Header("Fields", order = 1)]     
-        private MeshRenderer _hitPointRenderer = null;
-        [SerializeField] private AnimationCurve _alphaAnimationCurve = default;
+        [Header("Fields", order = 1)]           
 
         [SerializeField] private TrailRenderer _shrapnelTrail;
         [SerializeField] private Gradient _componentDamageTrail;
@@ -22,6 +20,8 @@ namespace Project.Uncategorized
 
         [SerializeField] private ConstantForce _constantForce;
         [SerializeField] private Rigidbody _rigidbody;
+
+        [SerializeField] private HitPointsPool _hitPointsPool;
 
         private int _shrapnelDamage;
         private VehicleComponent.DamageMode _damageMode;
@@ -34,10 +34,7 @@ namespace Project.Uncategorized
 
 
         #region Methods
-        void Start()
-        {
-            _hitPointRenderer = GetComponent<MeshRenderer>();       
-        }
+       
        void Update()
         {
             
@@ -90,22 +87,46 @@ namespace Project.Uncategorized
             if (other.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
             {
                 Hit(vehicleComponentCollider);
+                DisableEverySecondShrapnel();
+                
             }
             if (other.gameObject.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
             {
-                ResetShrapnel();
+                StopShrapnel();
+                StartCoroutine(CountdownAfterArmorPanelHit());
             }
+
         }
         void Hit(VehicleComponentCollider vehicleComponentCollider)
         {
             vehicleComponentCollider.vehicleComponent.Hit(_shrapnelDamage,_damageMode);
+            _hitPointsPool.GetHitPointHere(transform.position);
+        }
+        private IEnumerator CountdownAfterArmorPanelHit()
+        {
+            yield return new WaitForSeconds(1f);
+            ResetShrapnel();
         }
         void ResetShrapnel()
         {
-            _rigidbody.velocity = Vector3.zero;
+            StopShrapnel();
             transform.localPosition = Vector3.zero;
             _shrapnelTrail.Clear();
             gameObject.SetActive(false);
+        }
+        void StopShrapnel()
+        {
+            _constantForce.force = Vector3.zero;
+            _rigidbody.velocity = Vector3.zero;          
+        }
+        void DisableEverySecondShrapnel()
+        {
+            if(transform.GetSiblingIndex() % 2 is 0)
+            {
+                StopShrapnel();
+                StartCoroutine(CountdownAfterArmorPanelHit());
+                Debug.Log("Disabled");
+            }
         }
         #endregion
     }
