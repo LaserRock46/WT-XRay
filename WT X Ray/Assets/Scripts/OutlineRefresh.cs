@@ -45,7 +45,6 @@ namespace Project.Uncategorized
                 _outline.Refresh();
                 _needRefresh = false;
                 _timeSinceLastRefresh = 0;
-            Debug.Log(nameof(Refresh));
         }
         #endregion
     }

@@ -20,11 +20,16 @@ namespace Project.Uncategorized
 
         [SerializeField] private ConstantForce _constantForce;
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private SphereCollider _collider;
+        [SerializeField] private LayerMask _armorLayerMask;
 
         [SerializeField] private HitPointsPool _hitPointsPool;
 
         private int _shrapnelDamage;
         private VehicleComponent.DamageMode _damageMode;
+
+        private Vector3 _flightStartingPoint;
+        private float _flightDistance;
         #endregion
 
         #region Functions
@@ -35,9 +40,9 @@ namespace Project.Uncategorized
 
         #region Methods
        
-       void Update()
+       void FixedUpdate()
         {
-            
+            DetectArmorOvershoot();
         }
        
         public void Shot(VehicleComponent.DamageMode damageMode,float force, int shrapnelDamage = 15)
@@ -47,29 +52,30 @@ namespace Project.Uncategorized
             _shrapnelDamage = shrapnelDamage;
             _damageMode = damageMode;
 
+            FlightSetup();
+            SetArmorOvershootDistance();
             if (damageMode == VehicleComponent.DamageMode.Visualisation)
             {
                 _shrapnelTrail.gameObject.SetActive(true);
-                SetTrailGradient();
             }
             else
             {
                 _shrapnelTrail.gameObject.SetActive(false);
             }
         } 
-        void SetTrailGradient()
-        {
+        void FlightSetup()
+        {         
             RaycastHit hit;
            
             if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
             {
                 if (hit.collider.gameObject.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
                 {
-                    _shrapnelTrail.colorGradient = _armorDamageTrail;
+                    SetTrailGradient(true);                 
                 }
                 else if (hit.collider.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
                 {
-                    _shrapnelTrail.colorGradient = _componentDamageTrail;
+                    SetTrailGradient(false);
                 }
                 else
                 {
@@ -81,7 +87,42 @@ namespace Project.Uncategorized
                 ResetShrapnel();
             }
 
-        }      
+        }
+        void SetTrailGradient(bool hitArmor)
+        {
+            if (hitArmor)
+            {
+                _shrapnelTrail.colorGradient = _armorDamageTrail;
+            }
+            else
+            {
+                _shrapnelTrail.colorGradient = _componentDamageTrail;
+            }
+        }
+        void SetArmorOvershootDistance()
+        {
+            _flightStartingPoint = transform.position;
+            RaycastHit hit;
+         
+            if (Physics.SphereCast(transform.position,_collider.radius, transform.forward, out hit, Mathf.Infinity, _armorLayerMask))
+            {
+                _flightDistance = Vector3.Distance(hit.point, _flightStartingPoint);
+                //Debug.DrawLine(_flightStartingPoint, hit.point, Color.green, 1f);
+            }
+        }
+        void DetectArmorOvershoot()
+        {
+            if (_rigidbody.velocity != Vector3.zero)
+            {
+                if (Vector3.Distance(_flightStartingPoint, transform.position) > _flightDistance + _collider.radius)
+                {
+                    StopShrapnel();
+                    StartCoroutine(CountdownAfterArmorPanelHit());
+                    //Debug.Log(nameof(DetectArmorOvershoot));
+                    //Debug.DrawLine(_flightStartingPoint, transform.position, Color.red, 1f);
+                }
+            }
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
@@ -125,7 +166,6 @@ namespace Project.Uncategorized
             {
                 StopShrapnel();
                 StartCoroutine(CountdownAfterArmorPanelHit());
-                Debug.Log("Disabled");
             }
         }
         #endregion
