@@ -7,7 +7,7 @@ namespace Project.Uncategorized
    [AddComponentMenu(nameof(Project) + "/" + nameof(Uncategorized) + "/ShrapnelController")]
     public class ShrapnelController : MonoBehaviour
     {
-         #region Temp
+        #region Temp
         //[Header("Temporary Things", order = 0)]
         #endregion
 
@@ -18,18 +18,21 @@ namespace Project.Uncategorized
         [SerializeField] private Gradient _componentDamageTrail;
         [SerializeField] private Gradient _armorDamageTrail;
 
-        [SerializeField] private ConstantForce _constantForce;
-        [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private SphereCollider _collider;
-        [SerializeField] private LayerMask _armorLayerMask;
-
         [SerializeField] private HitPointsPool _hitPointsPool;
 
-        private int _shrapnelDamage;
-        private VehicleComponent.DamageMode _damageMode;
+        [SerializeField] private float _shrapnelSpeed;
+        [SerializeField] private float _shrapnelRadius;
 
-        private Vector3 _flightStartingPoint;
+        [SerializeField] private LayerMask _armorLayerMask;
+        private int _shrapnelDamage;
+        private VehicleComponent.DamageMode _damageMode;     
+        private List<RaycastHit> _shrapnelTargets = new List<RaycastHit>();
+
+      
         private float _flightDistance;
+        private Vector3 _flightStart;
+        private Vector3 _flightEnd;
+        private Transform _parent;
         #endregion
 
         #region Functions
@@ -38,25 +41,22 @@ namespace Project.Uncategorized
 
 
 
-        #region Methods
-       
-       void FixedUpdate()
+        #region Methods         
+        public void Shot(Transform shrapnelParent, VehicleComponent.DamageMode damageMode,float force, int shrapnelDamage = 15)
         {
-            DetectArmorOvershoot();
-        }
-       
-        public void Shot(VehicleComponent.DamageMode damageMode,float force, int shrapnelDamage = 15)
-        {
-            gameObject.SetActive(true);        
-            _constantForce.force = force * transform.forward;
+            _parent = shrapnelParent;
+            transform.SetParent(null);
+            gameObject.SetActive(true);
+            _shrapnelSpeed = force;
             _shrapnelDamage = shrapnelDamage;
             _damageMode = damageMode;
 
             FlightSetup();
-            SetArmorOvershootDistance();
+            DisableShrapnelWithoutTarget();
             if (damageMode == VehicleComponent.DamageMode.Visualisation)
             {
                 _shrapnelTrail.gameObject.SetActive(true);
+                SetTrailGradient();
             }
             else
             {
@@ -64,6 +64,37 @@ namespace Project.Uncategorized
             }
         } 
         void FlightSetup()
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f,_armorLayerMask))
+            {       
+                _flightDistance = Vector3.Distance(transform.position, hit.point);
+                _flightStart = transform.position;
+                _flightEnd = hit.point;
+                GenerateShrapnelCollisions();
+                StartCoroutine(Flight());
+            }
+        }
+        IEnumerator Flight()
+        {
+            float coverage = 0;
+            while (coverage < _flightDistance) 
+            {
+                float step = _shrapnelSpeed * Time.deltaTime;
+                coverage += step;
+               
+                transform.position += transform.forward * step;
+                float time =Mathf.Clamp(Mathf.InverseLerp(0,_flightDistance,coverage),0,1);
+                transform.position = Vector3.Lerp(_flightStart,_flightEnd,time);
+                ExecuteShrapnelCollision(coverage);           
+                yield return null;
+            }
+            ExecuteShrapnelCollision(_flightDistance);
+            StartCoroutine(CountdownAfterArmorPanelHit());
+            yield return null;
+        }
+        void SetTrailGradient()
         {         
             RaycastHit hit;
            
@@ -71,100 +102,79 @@ namespace Project.Uncategorized
             {
                 if (hit.collider.gameObject.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
                 {
-                    SetTrailGradient(true);                 
+                    _shrapnelTrail.colorGradient = _armorDamageTrail;
                 }
                 else if (hit.collider.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
                 {
-                    SetTrailGradient(false);
-                }
-                else
+                    _shrapnelTrail.colorGradient = _componentDamageTrail;
+                }             
+            }       
+        }
+        void DisableShrapnelWithoutTarget()
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
+            {
+                if (hit.collider.gameObject.layer == 0)
                 {
                     ResetShrapnel();
-                }
+                }            
             }
             else
             {
                 ResetShrapnel();
             }
-
         }
-        void SetTrailGradient(bool hitArmor)
+        void GenerateShrapnelCollisions()
+        {       
+            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightDistance);
+            _shrapnelTargets.AddRange(targets);
+        }      
+        private void ExecuteShrapnelCollision(float coverage)
         {
-            if (hitArmor)
+            for (int i = 0; i < _shrapnelTargets.Count; i++)
             {
-                _shrapnelTrail.colorGradient = _armorDamageTrail;
-            }
-            else
-            {
-                _shrapnelTrail.colorGradient = _componentDamageTrail;
-            }
-        }
-        void SetArmorOvershootDistance()
-        {
-            _flightStartingPoint = transform.position;
-            RaycastHit hit;
-         
-            if (Physics.SphereCast(transform.position,_collider.radius, transform.forward, out hit, Mathf.Infinity, _armorLayerMask))
-            {
-                _flightDistance = Vector3.Distance(hit.point, _flightStartingPoint);
-                //Debug.DrawLine(_flightStartingPoint, hit.point, Color.green, 1f);
-            }
-        }
-        void DetectArmorOvershoot()
-        {
-            if (_rigidbody.velocity != Vector3.zero)
-            {
-                if (Vector3.Distance(_flightStartingPoint, transform.position) > _flightDistance + _collider.radius)
+                if (coverage >= _shrapnelTargets[i].distance)
                 {
-                    StopShrapnel();
-                    StartCoroutine(CountdownAfterArmorPanelHit());
-                    //Debug.Log(nameof(DetectArmorOvershoot));
-                    //Debug.DrawLine(_flightStartingPoint, transform.position, Color.red, 1f);
-                }
+                    if (_shrapnelTargets[i].collider.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
+                    {
+                        Hit(vehicleComponentCollider, _shrapnelTargets[i].point);
+                        DisableEverySecondShrapnel();
+                    }
+                    if (_shrapnelTargets[i].collider.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
+                    {
+                        StartCoroutine(CountdownAfterArmorPanelHit());
+                    }
+                    _shrapnelTargets.RemoveAt(i);
+                }                    
+            }
+            if(_shrapnelTargets.Count == 1 && _shrapnelTrail.colorGradient == _componentDamageTrail)
+            {
+                ResetShrapnel();
             }
         }
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
-            {
-                Hit(vehicleComponentCollider);
-                DisableEverySecondShrapnel();
-                
-            }
-            if (other.gameObject.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
-            {
-                StopShrapnel();
-                StartCoroutine(CountdownAfterArmorPanelHit());
-            }
-
-        }
-        void Hit(VehicleComponentCollider vehicleComponentCollider)
+        void Hit(VehicleComponentCollider vehicleComponentCollider,Vector3 collsionPoint)
         {
             vehicleComponentCollider.vehicleComponent.Hit(_shrapnelDamage,_damageMode);
-            _hitPointsPool.GetHitPointHere(transform.position);
+            _hitPointsPool.GetHitPointHere(collsionPoint);
         }
         private IEnumerator CountdownAfterArmorPanelHit()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f);         
             ResetShrapnel();
         }
         void ResetShrapnel()
         {
-            StopShrapnel();
+            transform.SetParent(_parent);
             transform.localPosition = Vector3.zero;
             _shrapnelTrail.Clear();
-            gameObject.SetActive(false);
-        }
-        void StopShrapnel()
-        {
-            _constantForce.force = Vector3.zero;
-            _rigidbody.velocity = Vector3.zero;          
-        }
+            gameObject.SetActive(false);          
+        }    
         void DisableEverySecondShrapnel()
         {
             if(transform.GetSiblingIndex() % 2 is 0)
-            {
-                StopShrapnel();
+            {              
                 StartCoroutine(CountdownAfterArmorPanelHit());
             }
         }

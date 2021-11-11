@@ -55,7 +55,6 @@ namespace Project.Uncategorized
                 alpha -= Time.deltaTime;
                 _materialPropertyBlock.SetFloat(_alphaNameID,alpha);
                 Graphics.DrawMesh(_hitPointMesh,matrix,_hitPointMat,_hitLayer,null,0,_materialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode.Off,false);            
-
                 yield return null;
             }          
             yield return null;

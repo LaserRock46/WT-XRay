@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5258780754016133412}
   - component: {fileID: 6363313421916026471}
-  - component: {fileID: 162798650732131061}
-  - component: {fileID: 7018688066067135622}
-  - component: {fileID: 4468146905400462956}
   m_Layer: 11
   m_Name: Shrapnel Prefab
   m_TagString: Untagged
@@ -107,54 +104,13 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  _constantForce: {fileID: 4468146905400462956}
-  _rigidbody: {fileID: 7018688066067135622}
-  _collider: {fileID: 162798650732131061}
+  _hitPointsPool: {fileID: 0}
+  _shrapnelSpeed: 0
+  _shrapnelRadius: 0.05
   _armorLayerMask:
     serializedVersion: 2
     m_Bits: 16384
-  _hitPointsPool: {fileID: 0}
---- !u!135 &162798650732131061
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010370750073000876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.05
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7018688066067135622
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010370750073000876}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 3
---- !u!75 &4468146905400462956
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010370750073000876}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
+  _parent: {fileID: 0}
 --- !u!1001 &2008385212339840571
 PrefabInstance:
   m_ObjectHideFlags: 0

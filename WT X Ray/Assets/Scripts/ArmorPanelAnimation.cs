@@ -56,14 +56,7 @@ namespace Project.Uncategorized
 
             _armorPanelMesh.enabled = false;
             yield return null;
-        }
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.TryGetComponent(out Projectile projectile))
-            {
-                Hit();
-            }
-        }
+        }       
         #endregion
     }
 }

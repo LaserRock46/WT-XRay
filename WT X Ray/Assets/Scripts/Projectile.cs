@@ -42,7 +42,7 @@ namespace Project.Uncategorized
         {          
             foreach (ShrapnelController shrapnel in _shrapnels)
             {
-                shrapnel.Shot(_damageMode,_damageMode == VehicleComponent.DamageMode.Visualisation ? _shrapnelForce: _forceSimulation,_shrapnelDamage);
+                shrapnel.Shot(transform,_damageMode,_damageMode == VehicleComponent.DamageMode.Visualisation ? _shrapnelForce: _forceSimulation,_shrapnelDamage);
             }
         }
         public void Shot()
