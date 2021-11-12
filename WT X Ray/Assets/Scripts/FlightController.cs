@@ -40,8 +40,7 @@ namespace Project.Uncategorized
                 flightEnd = hit.point;
                 StartCoroutine(Flight(flightSpeed));
                 if (drawDebug)
-                {
-                    Debug.Log(hit.distance);
+                {               
                     Debug.DrawLine(flightStart, flightEnd, Color.green, 2f);
                 }
             }

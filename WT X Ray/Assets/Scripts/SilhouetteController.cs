@@ -21,10 +21,11 @@ namespace Project.Uncategorized
         [SerializeField] private string _propertyRadius;
         private int _propertyIdPosition;
         private int _propertyIdRadius;
-        public float radiusSpeed;
+        [SerializeField] private float _radiusSpeed = 1;
+        [SerializeField] private float _radiusTarget = 10;
         [SerializeField] private Transform _silhouetteWorldCenter;
         [SerializeField] private MeshFilter _silhouetteQuad;
-        [SerializeField] private Vector3[] _frustumCornersQuad = new Vector3[4];
+        private Vector3[] _frustumCornersQuad = new Vector3[4];
 
 
         #endregion
@@ -53,7 +54,47 @@ namespace Project.Uncategorized
         {
             _propertyIdPosition = Shader.PropertyToID(_propertyPosition);
             _propertyIdRadius = Shader.PropertyToID(_propertyRadius);
+            _silhouetteMat.SetFloat(_propertyIdRadius, 0);
             FitQuadInNearPlane();
+        }
+       void Update()
+        {
+            UpdatePosition();
+        }
+        public void Reveal(Vector3 position)
+        {
+            _silhouetteWorldCenter.position = position;
+            StartCoroutine(RevealUpdate());
+        }
+        IEnumerator RevealUpdate()
+        {
+            float radius = 0;
+    
+            while (radius < _radiusTarget)
+            {
+                radius += Time.deltaTime * _radiusSpeed;
+                _silhouetteMat.SetFloat(_propertyIdRadius, radius);
+                yield return null;
+            }
+          
+            yield return null;
+        }
+        public void Hide()
+        {
+            StartCoroutine(HideUpdate());
+        }
+        IEnumerator HideUpdate()
+        {
+            float radius = _radiusTarget;
+         
+            while (radius >= 0)
+            {
+                radius -= Time.deltaTime * _radiusSpeed;
+                _silhouetteMat.SetFloat(_propertyIdRadius, radius);
+                yield return null;
+            }
+          
+            yield return null;
         }
         void FitQuadInNearPlane()
         {       
@@ -61,10 +102,9 @@ namespace Project.Uncategorized
             Vector3[] sortedCorners = { _frustumCornersQuad[0], _frustumCornersQuad[3], _frustumCornersQuad[1], _frustumCornersQuad[2] };
             _silhouetteQuad.mesh.vertices = sortedCorners;
             _silhouetteQuad.mesh.RecalculateBounds();
-        }
-       void Update()
+        }     
+        void UpdatePosition()
         {
-            FitQuadInNearPlane();
             _silhouetteMat.SetVector(_propertyIdPosition,WorldToQuad(_silhouetteWorldCenter.position));
         }
         #endregion

@@ -23,6 +23,7 @@ namespace Project.Uncategorized
         [SerializeField] private VehicleComponent.DamageMode _damageMode;
         [SerializeField] private FlightController _flightController;
         [SerializeField] private HitPointsPool _hitPointsPool;
+        [SerializeField] private SilhouetteController _silhouetteController;
 
         private List<RaycastHit> _projectileTargets = new List<RaycastHit>();
 
@@ -103,11 +104,8 @@ namespace Project.Uncategorized
         }
         void DetectArmorPenetration(RaycastHit hit)
         {
-
-            Debug.Log(_projectileTargets.Count);
             if (_firstHullPenetrationPerformed == false)
             {
-                Debug.Log(nameof(_firstHullPenetrationPerformed));
                 _firstHullPenetrationPerformed = true;
                 _penetrationPosition = hit.point;
 
@@ -116,14 +114,21 @@ namespace Project.Uncategorized
                 Vector3 explosionPosition = hit.point + (transform.forward * _afterPenetrationOffset);
                 Explode(explosionPosition);
                 GenerateProjectileCollisions();
+                _silhouetteController.Reveal(hit.point);
             }
             if(_firstHullPenetrationPerformed && hit.point != _penetrationPosition)
-            {     
-                ResetProjectile();
+            {
+                StartCoroutine(CountdownAfterSecondPenetration());
             }           
+        }
+        private IEnumerator CountdownAfterSecondPenetration()
+        {
+            yield return new WaitForSeconds(0.4f);
+            ResetProjectile();
         }
         void ResetProjectile()
         {
+            _silhouetteController.Hide();
             gameObject.SetActive(false);
             transform.localPosition = Vector3.zero;
             _penetrationPosition = Vector3.zero;

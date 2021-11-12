@@ -18,8 +18,8 @@ namespace Project.Uncategorized
         [SerializeField] private float _hitPointFadeOutTime = 2.5f;
         [SerializeField] private float _hitPointAnimatedFadeOutTime = 1f;
         [SerializeField] private Mesh _hitPointMesh;
-        [SerializeField] private float _hitPointScale = 0.075f;
-        [SerializeField] private float _hitPointAnimatedScale = 0.2f;
+        [SerializeField] private float _hitPointScale = 0.075f;      
+        [SerializeField] private AnimationCurve _hitPointAnimatedScale;
         [SerializeField] private Material _hitPointMat;
         [SerializeField] private int _hitLayer = 11;
 
@@ -58,7 +58,7 @@ namespace Project.Uncategorized
                 alpha -= Time.deltaTime;
                 if (animatedScale)
                 {
-                    animatedScaleValue = Mathf.Lerp(0, _hitPointAnimatedScale,Mathf.InverseLerp(_hitPointFadeOutTime,0,alpha));
+                    animatedScaleValue = Mathf.Lerp(0, _hitPointAnimatedScale.Evaluate(alpha),Mathf.InverseLerp(_hitPointFadeOutTime,0,alpha));
                     matrix.m00 = animatedScaleValue;
                     matrix.m11 = animatedScaleValue;
                     matrix.m22 = animatedScaleValue;

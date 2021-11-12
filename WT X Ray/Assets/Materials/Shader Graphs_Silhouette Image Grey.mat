@@ -42,7 +42,7 @@ Material:
     - Edge_Silhouette_Outline: 0.017
     - Inner_Alpha: 0.999
     - Outer_Edge: 0.002
-    - Radius: 0.038
+    - Radius: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
