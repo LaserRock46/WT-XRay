@@ -20,19 +20,14 @@ namespace Project.Uncategorized
 
         [SerializeField] private HitPointsPool _hitPointsPool;
 
-        [SerializeField] private float _shrapnelSpeed;
         [SerializeField] private float _shrapnelRadius;
 
-        [SerializeField] private LayerMask _armorLayerMask;
         private int _shrapnelDamage;
         private VehicleComponent.DamageMode _damageMode;     
-        private List<RaycastHit> _shrapnelTargets = new List<RaycastHit>();
-
-      
-        private float _flightDistance;
-        private Vector3 _flightStart;
-        private Vector3 _flightEnd;
+        private List<RaycastHit> _shrapnelTargets = new List<RaycastHit>();    
         private Transform _parent;
+
+        [SerializeField] private FlightController _flightController;
         #endregion
 
         #region Functions
@@ -41,18 +36,21 @@ namespace Project.Uncategorized
 
 
 
-        #region Methods         
-        public void Shot(Transform shrapnelParent, VehicleComponent.DamageMode damageMode,float force, int shrapnelDamage = 15)
+        #region Methods       
+        public void Shot(Vector3 explosionPosition,Transform shrapnelParent, VehicleComponent.DamageMode damageMode,float shrapnelSpeedForce, int shrapnelDamage = 15)
         {
             _parent = shrapnelParent;
             transform.SetParent(null);
-            gameObject.SetActive(true);
-            _shrapnelSpeed = force;
+            gameObject.SetActive(true);        
             _shrapnelDamage = shrapnelDamage;
             _damageMode = damageMode;
-
-            FlightSetup();
+            transform.position = explosionPosition;
+            _flightController.FlightSetup(shrapnelSpeedForce);
             DisableShrapnelWithoutTarget();
+            if (gameObject.activeSelf)
+            {
+                GenerateShrapnelCollisions();
+            }
             if (damageMode == VehicleComponent.DamageMode.Visualisation)
             {
                 _shrapnelTrail.gameObject.SetActive(true);
@@ -63,37 +61,7 @@ namespace Project.Uncategorized
                 _shrapnelTrail.gameObject.SetActive(false);
             }
         } 
-        void FlightSetup()
-        {
-            RaycastHit hit;
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f,_armorLayerMask))
-            {       
-                _flightDistance = Vector3.Distance(transform.position, hit.point);
-                _flightStart = transform.position;
-                _flightEnd = hit.point;
-                GenerateShrapnelCollisions();
-                StartCoroutine(Flight());
-            }
-        }
-        IEnumerator Flight()
-        {
-            float coverage = 0;
-            while (coverage < _flightDistance) 
-            {
-                float step = _shrapnelSpeed * Time.deltaTime;
-                coverage += step;
-               
-                transform.position += transform.forward * step;
-                float time =Mathf.Clamp(Mathf.InverseLerp(0,_flightDistance,coverage),0,1);
-                transform.position = Vector3.Lerp(_flightStart,_flightEnd,time);
-                ExecuteShrapnelCollision(coverage);           
-                yield return null;
-            }
-            ExecuteShrapnelCollision(_flightDistance);
-            StartCoroutine(CountdownAfterArmorPanelHit());
-            yield return null;
-        }
+      
         void SetTrailGradient()
         {         
             RaycastHit hit;
@@ -128,9 +96,21 @@ namespace Project.Uncategorized
         }
         void GenerateShrapnelCollisions()
         {       
-            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightDistance);
+            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
             _shrapnelTargets.AddRange(targets);
-        }      
+            StartCoroutine(CollisionUpdate());
+        }     
+        IEnumerator CollisionUpdate()
+        {          
+            while (_flightController.coverage < _flightController.flightDistance) 
+            {            
+                ExecuteShrapnelCollision(_flightController.coverage);           
+                yield return null;
+            }
+            ExecuteShrapnelCollision(_flightController.flightDistance);
+            StartCoroutine(CountdownAfterArmorPanelHit());
+            yield return null;
+        }
         private void ExecuteShrapnelCollision(float coverage)
         {
             for (int i = 0; i < _shrapnelTargets.Count; i++)

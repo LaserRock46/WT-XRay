@@ -19,7 +19,17 @@ namespace Project.Uncategorized
         [SerializeField] private float _forceSimulation = 1000f;
         [SerializeField] private int _shrapnelDamage = 15;
         [SerializeField] private int _projectileDamage = 500;
+        [SerializeField] private float _afterPenetrationOffset = 0.1f;
         [SerializeField] private VehicleComponent.DamageMode _damageMode;
+        [SerializeField] private FlightController _flightController;
+        [SerializeField] private HitPointsPool _hitPointsPool;
+
+        private List<RaycastHit> _projectileTargets = new List<RaycastHit>();
+
+        private bool _firstHullPenetrationPerformed = false;      
+        private Vector3 _penetrationPosition = new Vector3();
+        private bool _exploded = false;
+        [SerializeField] private Transform _parent;
         #endregion
 
         #region Functions
@@ -29,31 +39,98 @@ namespace Project.Uncategorized
 
 
         #region Methods
-        void Start()
-        {
-            
-        }
-       void Update()
-        {
-            
-        }      
+       
         [ContextMenu("Test Projectile")]
         void TestProjectile()
-        {          
-            foreach (ShrapnelController shrapnel in _shrapnels)
-            {
-                shrapnel.Shot(transform,_damageMode,_damageMode == VehicleComponent.DamageMode.Visualisation ? _shrapnelForce: _forceSimulation,_shrapnelDamage);
-            }
+        {
+           Shot();
         }
         public void Shot()
         {
-
-        }
-        private void OnTriggerEnter(Collider other)
+            gameObject.SetActive(true);
+            _flightController.FlightSetup(_damageMode == VehicleComponent.DamageMode.Visualisation ? _projectileForce : _forceSimulation);
+            GenerateProjectileCollisions();
+        }      
+        void Explode(Vector3 position)
         {
-            
+            if (_exploded == false)
+            {
+                _exploded = true;
+                foreach (ShrapnelController shrapnel in _shrapnels)
+                {
+                    shrapnel.Shot(position,transform, _damageMode, _damageMode == VehicleComponent.DamageMode.Visualisation ? _shrapnelForce : _forceSimulation, _shrapnelDamage);
+                }
+            }
         }
+        void GenerateProjectileCollisions()
+        {
+            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
+            _projectileTargets.AddRange(targets);
+            StartCoroutine(CollisionUpdate());
+        }
+        IEnumerator CollisionUpdate()
+        {
+            while (_flightController.coverage < _flightController.flightDistance)
+            {            
+                ExecuteProjectileCollision(_flightController.coverage);
+                yield return null;
+            }
+            ExecuteProjectileCollision(_flightController.flightDistance);
+           
+            yield return null;
+        }
+        private void ExecuteProjectileCollision(float coverage)
+        {
+            for (int i = 0; i < _projectileTargets.Count; i++)
+            {
+                if (coverage >= _projectileTargets[i].distance)
+                {
+                    if (_projectileTargets[i].collider.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
+                    {
+                        vehicleComponentCollider.vehicleComponent.Hit(_projectileDamage, _damageMode);
+                        _hitPointsPool.GetHitPointHere(_projectileTargets[i].point);
+                    }
+                    if (_projectileTargets[i].collider.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
+                    {
+                        armorPanelAnimation.Hit();
+                        _hitPointsPool.GetHitPointHere(_projectileTargets[i].point,true);
+                        DetectArmorPenetration(_projectileTargets[i]);
+                    }
+                    
+                    _projectileTargets.RemoveAt(i);
+                }
+            }           
+        }
+        void DetectArmorPenetration(RaycastHit hit)
+        {
 
+            Debug.Log(_projectileTargets.Count);
+            if (_firstHullPenetrationPerformed == false)
+            {
+                Debug.Log(nameof(_firstHullPenetrationPerformed));
+                _firstHullPenetrationPerformed = true;
+                _penetrationPosition = hit.point;
+
+                _flightController.FlightSetup(_damageMode == VehicleComponent.DamageMode.Visualisation ? _projectileForce : _forceSimulation,_afterPenetrationOffset,true);
+
+                Vector3 explosionPosition = hit.point + (transform.forward * _afterPenetrationOffset);
+                Explode(explosionPosition);
+                GenerateProjectileCollisions();
+            }
+            if(_firstHullPenetrationPerformed && hit.point != _penetrationPosition)
+            {     
+                ResetProjectile();
+            }           
+        }
+        void ResetProjectile()
+        {
+            gameObject.SetActive(false);
+            transform.localPosition = Vector3.zero;
+            _penetrationPosition = Vector3.zero;
+            _firstHullPenetrationPerformed = false;
+          
+            _exploded = false;
+        }
         #endregion
     }
 }

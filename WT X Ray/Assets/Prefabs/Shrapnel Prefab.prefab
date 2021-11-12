@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5258780754016133412}
   - component: {fileID: 6363313421916026471}
+  - component: {fileID: 2651043117323405418}
   m_Layer: 11
   m_Name: Shrapnel Prefab
   m_TagString: Untagged
@@ -105,12 +106,23 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   _hitPointsPool: {fileID: 0}
-  _shrapnelSpeed: 0
   _shrapnelRadius: 0.05
+  _flightController: {fileID: 2651043117323405418}
+--- !u!114 &2651043117323405418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010370750073000876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f750378efa0845344b3f824ec1dae8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _armorLayerMask:
     serializedVersion: 2
     m_Bits: 16384
-  _parent: {fileID: 0}
 --- !u!1001 &2008385212339840571
 PrefabInstance:
   m_ObjectHideFlags: 0
