@@ -39,17 +39,17 @@ Material:
     m_Floats:
     - Edge: 0.0015
     - Edge_Silhouette: 0.01
-    - Edge_Silhouette_Outline: 0.017
+    - Edge_Silhouette_Outline: 0.008
     - Inner_Alpha: 0.999
-    - Outer_Edge: 0.002
-    - Radius: 0
+    - Outer_Edge: 0.0006
+    - Radius: -0.002269932
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - Color_Edge: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
     - Color_Inner: {r: 0.46274477, g: 0.46274477, b: 0.46274477, a: 1}
-    - Color_Outer_Edge: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
-    - Position: {r: 0.11547006, g: -0.05773503, b: 0, a: 0}
+    - Color_Outer_Edge: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    - Position: {r: -0.00039969763, g: -0.009429484, b: 0, a: 0}
     - Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

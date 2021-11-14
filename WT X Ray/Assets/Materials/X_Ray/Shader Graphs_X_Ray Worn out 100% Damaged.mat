@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -33,12 +33,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Alpha: 0.9
+    - Alpha: 0
     - Fresnel_Power: 1
     - Noise_Scale: 1
     - Opacity: 0.8
     - Smoothnes: 0
-    - _QueueControl: 0
+    - _Alpha: 0
+    - _QueueControl: 1
     - _QueueOffset: 0
     m_Colors:
     - _Color: {r: 0.3729975, g: 0.55131465, b: 0.6226415, a: 1}

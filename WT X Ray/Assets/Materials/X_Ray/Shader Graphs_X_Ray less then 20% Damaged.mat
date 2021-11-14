@@ -33,15 +33,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Alpha: 0.9
-    - Fresnel_Power: 1
+    - Alpha: 0
+    - Fresnel_Power: 0.6
     - Noise_Scale: 1
     - Opacity: 0.8
     - Smoothnes: 0
+    - _Alpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.69109946, g: 0.7529412, b: 0.56078434, a: 1}
+    - _Color: {r: 0.79607844, g: 0.79946154, b: 0.45490193, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4337918145614595237
 MonoBehaviour:

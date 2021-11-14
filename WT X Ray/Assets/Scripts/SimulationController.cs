@@ -36,7 +36,7 @@ namespace Project.Uncategorized
 
         }
         [ContextMenu(nameof(ResetComponents))]
-        void ResetComponents()
+        public void ResetComponents()
         {
             foreach (VehicleComponents item in _vehicleComponents)
             {

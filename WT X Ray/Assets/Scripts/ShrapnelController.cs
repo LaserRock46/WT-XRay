@@ -97,6 +97,7 @@ namespace Project.Uncategorized
         void GenerateShrapnelCollisions()
         {       
             RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
+            _shrapnelTargets.Clear();
             _shrapnelTargets.AddRange(targets);
             StartCoroutine(CollisionUpdate());
         }     

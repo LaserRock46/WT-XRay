@@ -8,9 +8,8 @@ namespace Project.Uncategorized
     public class SilhouetteController : MonoBehaviour
     {
         #region Temp
-        [Header("Temporary Things", order = 0)]
-        public float offset;
-
+        //[Header("Temporary Things", order = 0)]
+        public float outline;
         #endregion
 
         #region Fields
@@ -21,10 +20,16 @@ namespace Project.Uncategorized
         [SerializeField] private string _propertyRadius;
         private int _propertyIdPosition;
         private int _propertyIdRadius;
+        private bool _silhouetteRevealead = false;
         [SerializeField] private float _radiusSpeed = 1;
         [SerializeField] private float _radiusTarget = 10;
         [SerializeField] private Transform _silhouetteWorldCenter;
         [SerializeField] private MeshFilter _silhouetteQuad;
+
+        [SerializeField] private HighlightPlus.HighlightEffect _redOutline;
+        [SerializeField] private Material[] _xRayMaterials;
+        private int _alphaNameID;
+        [SerializeField] private float[] _maxXRayAlpha;
         private Vector3[] _frustumCornersQuad = new Vector3[4];
 
 
@@ -54,16 +59,23 @@ namespace Project.Uncategorized
         {
             _propertyIdPosition = Shader.PropertyToID(_propertyPosition);
             _propertyIdRadius = Shader.PropertyToID(_propertyRadius);
+            _alphaNameID = Shader.PropertyToID("_Alpha");
             _silhouetteMat.SetFloat(_propertyIdRadius, 0);
+            for (int i = 0; i < _xRayMaterials.Length; i++)
+            {            
+                _xRayMaterials[i].SetFloat(_alphaNameID, 0);
+            }
             FitQuadInNearPlane();
         }
        void Update()
         {
             UpdatePosition();
+            outline = _redOutline.outline;
         }
         public void Reveal(Vector3 position)
         {
             _silhouetteWorldCenter.position = position;
+            _silhouetteRevealead = true;
             StartCoroutine(RevealUpdate());
         }
         IEnumerator RevealUpdate()
@@ -74,6 +86,13 @@ namespace Project.Uncategorized
             {
                 radius += Time.deltaTime * _radiusSpeed;
                 _silhouetteMat.SetFloat(_propertyIdRadius, radius);
+
+                for (int i = 0; i < _xRayMaterials.Length; i++)
+                {
+                    float alpha = Mathf.Lerp(0,_maxXRayAlpha[i],Mathf.InverseLerp(0,_radiusTarget,radius));
+                    _xRayMaterials[i].SetFloat(_alphaNameID,alpha);
+                }
+                _redOutline.outline = Mathf.InverseLerp(0, _radiusTarget, radius);             
                 yield return null;
             }
           
@@ -81,7 +100,11 @@ namespace Project.Uncategorized
         }
         public void Hide()
         {
-            StartCoroutine(HideUpdate());
+            if (_silhouetteRevealead)
+            {
+                _silhouetteRevealead = false;
+                StartCoroutine(HideUpdate());
+            }
         }
         IEnumerator HideUpdate()
         {
@@ -91,6 +114,13 @@ namespace Project.Uncategorized
             {
                 radius -= Time.deltaTime * _radiusSpeed;
                 _silhouetteMat.SetFloat(_propertyIdRadius, radius);
+
+                for (int i = 0; i < _xRayMaterials.Length; i++)
+                {
+                    float alpha = Mathf.Lerp(_maxXRayAlpha[i], 0, Mathf.InverseLerp(_radiusTarget, 0, radius));
+                    _xRayMaterials[i].SetFloat(_alphaNameID, alpha);
+                }
+                _redOutline.outline = Mathf.InverseLerp(0, _radiusTarget, radius);              
                 yield return null;
             }
           
@@ -98,7 +128,7 @@ namespace Project.Uncategorized
         }
         void FitQuadInNearPlane()
         {       
-            _camera.CalculateFrustumCorners(new Rect(0,0,1,1),offset, Camera.MonoOrStereoscopicEye.Mono, _frustumCornersQuad);
+            _camera.CalculateFrustumCorners(new Rect(0,0,1,1),0.1f, Camera.MonoOrStereoscopicEye.Mono, _frustumCornersQuad);
             Vector3[] sortedCorners = { _frustumCornersQuad[0], _frustumCornersQuad[3], _frustumCornersQuad[1], _frustumCornersQuad[2] };
             _silhouetteQuad.mesh.vertices = sortedCorners;
             _silhouetteQuad.mesh.RecalculateBounds();

@@ -46,11 +46,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Alpha: 1
-    - Fresnel_Power: 1
+    - Alpha: 0
+    - Fresnel_Power: 0.7
     - Noise_Scale: 1
     - Opacity: 0.8
     - Smoothnes: 0
+    - _Alpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

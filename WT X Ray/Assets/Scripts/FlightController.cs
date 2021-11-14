@@ -45,6 +45,26 @@ namespace Project.Uncategorized
                 }
             }
         }
+        public void FlightSetupAll(float flightSpeed, float rayOffset = 0, bool drawDebug = false)
+        {        
+            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, 100,_armorLayerMask);
+
+            flightStart = transform.position;
+            flightDistance = 0;
+            for (int i = 0; i < targets.Length; i++)
+            {
+                if(flightDistance < targets[i].distance)
+                {
+                    flightDistance = targets[i].distance;
+                    flightEnd = targets[i].point;
+                }
+            }
+            if (drawDebug)
+            {
+                Debug.DrawLine(flightStart, flightEnd, Color.green, 2f);
+            }
+            StartCoroutine(Flight(flightSpeed));
+        }
         IEnumerator Flight(float flightSpeed)
         {
             coverage = 0;
