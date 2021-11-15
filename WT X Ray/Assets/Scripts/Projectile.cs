@@ -20,8 +20,7 @@ namespace Project.Uncategorized
         [Header("Fields", order = 1)]
         [SerializeField] private ShrapnelController[] _shrapnels;
         [SerializeField] private float _shrapnelForce = 0.5f;
-        [SerializeField] private float _projectileForce = 1f;
-        [SerializeField] private float _projectileForceAfterPenetration = 1f;
+        [SerializeField] private float _projectileForce = 1f;       
         [SerializeField] private float _forceSimulation = 1000f;
         [SerializeField] private int _shrapnelDamage = 15;
         [SerializeField] private int _projectileDamage = 500;
