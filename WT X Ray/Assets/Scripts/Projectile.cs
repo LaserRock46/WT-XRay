@@ -35,8 +35,7 @@ namespace Project.Uncategorized
         private List<RaycastHit> _projectileTargets = new List<RaycastHit>();
         private bool[] _executedHit;
 
-        private bool _firstHullPenetrationPerformed = false;
-        private bool _secondHullPenetrationPerformed = false;
+        private bool _firstHullPenetrationPerformed = false;   
         private Vector3 _penetrationPosition = new Vector3();
         private bool _exploded = false;
         [SerializeField] private Transform _parent;
@@ -161,7 +160,6 @@ namespace Project.Uncategorized
         {       
             if (_flightController.coverage >= _flightController.flightDistance)
             {
-                _secondHullPenetrationPerformed = true;
                 StartCoroutine(FadeOutProjectile());
                 StartCoroutine(CountdownAfterSecondPenetration());
             }
@@ -191,7 +189,6 @@ namespace Project.Uncategorized
             transform.localPosition = Vector3.zero;
             _penetrationPosition = Vector3.zero;
             _firstHullPenetrationPerformed = false;
-            _secondHullPenetrationPerformed = false;
             _projectileMat.SetFloat("_Alpha", 1);
             _exploded = false;
            

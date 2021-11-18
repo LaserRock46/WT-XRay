@@ -16,8 +16,8 @@ namespace Project.Uncategorized
         private MeshRenderer _armorPanelMesh = null;
         [SerializeField] private AnimationCurve _alphaAnimationCurve = default;
         [SerializeField] private Material _armorPanelMat = null;
-        [SerializeField] private HighlightPlus.HighlightEffect _whiteOutline;
-        [SerializeField] private OutlineRefresh _outlineRefresh;
+        //[SerializeField] private HighlightPlus.HighlightEffect _whiteOutline;
+        [SerializeField] private UnityFx.Outline.OutlineSettings _whiteOutline;
         [SerializeField] private float _outlineWidth = 0.45f;
         #endregion
 
@@ -37,19 +37,21 @@ namespace Project.Uncategorized
         public void Hit()
         {
             _armorPanelMesh.enabled = true;
-            _outlineRefresh.NeedRefresh();
+            
             StartCoroutine(DoAnimation());
         }
         private IEnumerator DoAnimation()
         {
-            _whiteOutline.outlineWidth = _outlineWidth;
+            _whiteOutline.OutlineWidth = (int)_outlineWidth;
 
             float time = 0f;
             while (time < _alphaAnimationCurve.keys[_alphaAnimationCurve.length - 1].time)
             {
                 time += Time.deltaTime;
                 _armorPanelMat.SetColor("_BaseColor", new Color(1, 1, 1, _alphaAnimationCurve.Evaluate(time)));
-                _whiteOutline.outline = _alphaAnimationCurve.Evaluate(time)*3;
+                Color whiteColor = _whiteOutline.OutlineColor;
+                whiteColor.a = _alphaAnimationCurve.Evaluate(time) * 3;
+                _whiteOutline.OutlineColor = whiteColor;
 
                 yield return null;
             }

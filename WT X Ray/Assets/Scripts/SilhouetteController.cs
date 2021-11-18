@@ -9,7 +9,8 @@ namespace Project.Uncategorized
     {
         #region Temp
         //[Header("Temporary Things", order = 0)]
-        public float outline;
+        public float outline1;
+        public float outline2;
         #endregion
 
         #region Fields
@@ -26,7 +27,8 @@ namespace Project.Uncategorized
         [SerializeField] private Transform _silhouetteWorldCenter;
         [SerializeField] private MeshFilter _silhouetteQuad;
 
-        [SerializeField] private HighlightPlus.HighlightEffect _redOutline;
+        //[SerializeField] private HighlightPlus.HighlightEffect _redOutline;
+        [SerializeField] private UnityFx.Outline.OutlineSettings _redOutline;
         [SerializeField] private Material[] _xRayMaterials;
         private int _alphaNameID;
         [SerializeField] private float[] _maxXRayAlpha;
@@ -70,7 +72,7 @@ namespace Project.Uncategorized
        void Update()
         {
             UpdatePosition();
-            outline = _redOutline.outline;
+           
         }
         public void Reveal(Vector3 position)
         {
@@ -92,7 +94,8 @@ namespace Project.Uncategorized
                     float alpha = Mathf.Lerp(0,_maxXRayAlpha[i],Mathf.InverseLerp(0,_radiusTarget,radius));
                     _xRayMaterials[i].SetFloat(_alphaNameID,alpha);
                 }
-                _redOutline.outline = Mathf.InverseLerp(0, _radiusTarget, radius);             
+                //_redOutline.OutlineColor = new Color(_redOutline.OutlineColor.r, _redOutline.OutlineColor.g, _redOutline.OutlineColor.b, Mathf.InverseLerp(0, _radiusTarget, radius));
+                _redOutline.OutlineColor = new Color(_redOutline.OutlineColor.r, _redOutline.OutlineColor.g, _redOutline.OutlineColor.b, Mathf.InverseLerp(0, _radiusTarget, radius));
                 yield return null;
             }
           
@@ -120,7 +123,8 @@ namespace Project.Uncategorized
                     float alpha = Mathf.Lerp(_maxXRayAlpha[i], 0, Mathf.InverseLerp(_radiusTarget, 0, radius));
                     _xRayMaterials[i].SetFloat(_alphaNameID, alpha);
                 }
-                _redOutline.outline = Mathf.InverseLerp(0, _radiusTarget, radius);              
+                //_redOutline.outline = Mathf.InverseLerp(0, _radiusTarget, radius);
+                _redOutline.OutlineColor = new Color(_redOutline.OutlineColor.r, _redOutline.OutlineColor.g, _redOutline.OutlineColor.b, Mathf.InverseLerp(0, _radiusTarget, radius));
                 yield return null;
             }
           

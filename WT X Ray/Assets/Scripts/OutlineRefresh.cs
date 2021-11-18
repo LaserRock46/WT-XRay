@@ -13,7 +13,7 @@ namespace Project.Uncategorized
 
         #region Fields
         [Header("Fields", order = 1)]
-        [SerializeField] private HighlightPlus.HighlightEffect _outline;
+        //[SerializeField] private HighlightPlus.HighlightEffect _outline;
         [SerializeField] private float _timeSinceLastRefresh;
         [SerializeField] private float _minTimeRefresh;
         [SerializeField] private bool _needRefresh;
@@ -42,7 +42,7 @@ namespace Project.Uncategorized
         }
         void Refresh()
         {
-                _outline.Refresh();
+                //_outline.Refresh();
                 _needRefresh = false;
                 _timeSinceLastRefresh = 0;
         }

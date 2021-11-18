@@ -24,7 +24,8 @@ namespace Project.Uncategorized
 
         private int _shrapnelDamage;
         private VehicleComponent.DamageMode _damageMode;     
-        private List<RaycastHit> _shrapnelTargets = new List<RaycastHit>();    
+        private List<RaycastHit> _shrapnelTargets = new List<RaycastHit>();
+        private bool[] _executedHit;
         private Transform _parent;
 
         [SerializeField] private FlightController _flightController;
@@ -99,6 +100,7 @@ namespace Project.Uncategorized
             RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
             _shrapnelTargets.Clear();
             _shrapnelTargets.AddRange(targets);
+            _executedHit = new bool[targets.Length];
             StartCoroutine(CollisionUpdate());
         }     
         IEnumerator CollisionUpdate()
@@ -116,7 +118,7 @@ namespace Project.Uncategorized
         {
             for (int i = 0; i < _shrapnelTargets.Count; i++)
             {
-                if (coverage >= _shrapnelTargets[i].distance)
+                if (coverage >= _shrapnelTargets[i].distance && _executedHit[i] == false)
                 {
                     if (_shrapnelTargets[i].collider.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
                     {
@@ -127,7 +129,7 @@ namespace Project.Uncategorized
                     {
                         StartCoroutine(CountdownAfterArmorPanelHit());
                     }
-                    _shrapnelTargets.RemoveAt(i);
+                    _executedHit[i] = true;
                 }                    
             }
             if(_shrapnelTargets.Count == 1 && _shrapnelTrail.colorGradient == _componentDamageTrail)

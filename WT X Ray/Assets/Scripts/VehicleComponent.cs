@@ -23,7 +23,6 @@ namespace Project.Uncategorized
         [SerializeField] private Material[] _xRayMat;
         private string _layerXRay = "X Ray";      
         private string _layerXRayRedAnimated = "X Ray + Red Outline Animated";      
-        [SerializeField] private OutlineRefresh _redOutlineRefresh;
         private bool _outlineEnabled = false;
 
         [SerializeField] private MeshRenderer[] _componentRenderers;
@@ -105,15 +104,11 @@ namespace Project.Uncategorized
                 }
             if (_currentDurabilityVisuals == 0 && _outlineEnabled == false)
             {
-                _outlineEnabled = true;
-                _redOutlineRefresh.NeedRefresh();
-             
+                _outlineEnabled = true;           
             }
             else if(_currentDurabilityVisuals == _maxDurability && _outlineEnabled == true)
             {
-                _outlineEnabled = false;
-                _redOutlineRefresh.NeedRefresh();
-               
+                _outlineEnabled = false;               
             }
         }
         public void Hit(int damage, DamageMode damageMode)

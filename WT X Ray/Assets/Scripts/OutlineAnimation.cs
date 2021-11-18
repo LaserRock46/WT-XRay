@@ -13,7 +13,8 @@ namespace Project.Uncategorized
 
         #region Fields
         [Header("Fields", order = 1)]
-        [SerializeField] private HighlightPlus.HighlightEffect blinkRedYellow;
+        //[SerializeField] private HighlightPlus.HighlightEffect blinkRedYellow;
+        [SerializeField] private UnityFx.Outline.OutlineSettings blinkRedYellow;
         [SerializeField] private float speed;
         [SerializeField] private Color colorA;
         [SerializeField] private Color colorB;
@@ -48,7 +49,9 @@ namespace Project.Uncategorized
                 }
             }
             Color blinkColor = Color.Lerp(colorA, colorB, time);
-            blinkRedYellow.outlineColor = blinkColor;
+            blinkColor.a = blinkRedYellow.OutlineColor.a;
+            blinkRedYellow.OutlineColor = blinkColor;
+
         }
         #endregion
     }
