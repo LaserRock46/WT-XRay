@@ -2543,7 +2543,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   _armorPanelMat: {fileID: 2100000, guid: 65fd5f1392750af4f8abb537bc6e8556, type: 2}
   _whiteOutline: {fileID: 11400000, guid: cd72bc6a9a21fb44e8c7d40a68e00bca, type: 2}
-  _outlineRefresh: {fileID: 0}
   _outlineWidth: 4
 --- !u!23 &970130219
 MeshRenderer:
@@ -2857,10 +2856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62a9bde5443e6c4a848ad1312d01f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outline1: 0
-  outline2: 0
   _camera: {fileID: 1687258584}
   _silhouetteMat: {fileID: 2100000, guid: 095c2036cc2b63648b5eed4f99068caa, type: 2}
+  _silhouetteTexture: {fileID: 8400000, guid: 75f4f4dfb1479514aacdb68fb22c532e, type: 2}
   _propertyPosition: Position
   _propertyRadius: Radius
   _radiusSpeed: 0.25
@@ -7969,6 +7967,10 @@ PrefabInstance:
       propertyPath: _simulationController
       value: 
       objectReference: {fileID: 1217471668}
+    - target: {fileID: 454655701001491065, guid: 3d8f1538cee3314449996a84d542e316, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 659516391773083213, guid: 3d8f1538cee3314449996a84d542e316, type: 3}
       propertyPath: _redOutline
       value: 

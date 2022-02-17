@@ -9,14 +9,13 @@ namespace Project.Uncategorized
     {
         #region Temp
         //[Header("Temporary Things", order = 0)]
-        public float outline1;
-        public float outline2;
         #endregion
 
         #region Fields
         [Header("Fields", order = 1)]
         [SerializeField] private Camera _camera;
         [SerializeField] private Material _silhouetteMat;
+        [SerializeField] private RenderTexture _silhouetteTexture;
         [SerializeField] private string _propertyPosition;
         [SerializeField] private string _propertyRadius;
         private int _propertyIdPosition;
@@ -59,20 +58,42 @@ namespace Project.Uncategorized
         #region Methods
         void Start()
         {
+            CacheShaderProperties();
+            FitQuadInNearPlane();
+            ResizeSilhouetteToScreenResolution();
+        }
+        void FitQuadInNearPlane()
+        {
+            _camera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), 0.1f, Camera.MonoOrStereoscopicEye.Mono, _frustumCornersQuad);
+            Vector3[] sortedCorners = { _frustumCornersQuad[0], _frustumCornersQuad[3], _frustumCornersQuad[1], _frustumCornersQuad[2] };
+            _silhouetteQuad.mesh.vertices = sortedCorners;
+            _silhouetteQuad.mesh.RecalculateBounds();
+        }
+        void CacheShaderProperties()
+        {
             _propertyIdPosition = Shader.PropertyToID(_propertyPosition);
             _propertyIdRadius = Shader.PropertyToID(_propertyRadius);
             _alphaNameID = Shader.PropertyToID("_Alpha");
             _silhouetteMat.SetFloat(_propertyIdRadius, 0);
             for (int i = 0; i < _xRayMaterials.Length; i++)
-            {            
+            {
                 _xRayMaterials[i].SetFloat(_alphaNameID, 0);
             }
-            FitQuadInNearPlane();
         }
-       void Update()
+        void ResizeSilhouetteToScreenResolution()
+        {
+            if(_silhouetteTexture.width != Screen.width || _silhouetteTexture.height != Screen.height)
+            {
+                _silhouetteTexture.width = Screen.width;
+                _silhouetteTexture.height = Screen.height;
+                _silhouetteTexture.Create();
+                //_silhouetteTexture.
+            }
+        }
+        void Update()
         {
             UpdatePosition();
-           
+
         }
         public void Reveal(Vector3 position)
         {
@@ -130,13 +151,7 @@ namespace Project.Uncategorized
           
             yield return null;
         }
-        void FitQuadInNearPlane()
-        {       
-            _camera.CalculateFrustumCorners(new Rect(0,0,1,1),0.1f, Camera.MonoOrStereoscopicEye.Mono, _frustumCornersQuad);
-            Vector3[] sortedCorners = { _frustumCornersQuad[0], _frustumCornersQuad[3], _frustumCornersQuad[1], _frustumCornersQuad[2] };
-            _silhouetteQuad.mesh.vertices = sortedCorners;
-            _silhouetteQuad.mesh.RecalculateBounds();
-        }     
+      
         void UpdatePosition()
         {
             _silhouetteMat.SetVector(_propertyIdPosition,WorldToQuad(_silhouetteWorldCenter.position));
