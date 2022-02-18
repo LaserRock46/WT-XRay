@@ -49,7 +49,7 @@ Material:
     - Edge_Silhouette_Outline: 0.0015
     - Inner_Alpha: 0.999
     - Outer_Edge: 0.00033
-    - Radius: -0.0017374868
+    - Radius: 0
     - _AlphaClip: 1
     - _Blend: 0
     - _CastShadows: 0
@@ -66,7 +66,7 @@ Material:
     - Color_Edge: {r: 0.26666668, g: 0.7647059, b: 0, a: 1}
     - Color_Inner: {r: 0.24344459, g: 0.6981132, b: 0, a: 0.16470589}
     - Color_Outer_Edge: {r: 0.26666665, g: 0.7647059, b: 0, a: 1}
-    - Position: {r: -0.014094863, g: -0.003192478, b: 0, a: 0}
+    - Position: {r: 0.014949463, g: -0.0011178812, b: 0, a: 0}
     - Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

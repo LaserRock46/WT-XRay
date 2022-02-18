@@ -14,6 +14,9 @@ namespace Project.Uncategorized
         #region Fields
         [Header("Fields", order = 1)]
         [SerializeField] private VehicleComponents[] _vehicleComponents;
+        public enum Mode { PreviewDamage, PreviewPenetration}
+        [SerializeField] private Mode _mode;
+        public Mode CurrentMode { get { return _mode; } private set { _mode = value; } }
         #endregion
 
         #region Functions
@@ -34,6 +37,10 @@ namespace Project.Uncategorized
         public void NotifyAboutDestroyedComponent(VehicleComponent.ComponentType componentType)
         {
 
+        }
+        public void SetMode(Mode mode)
+        {
+            _mode = mode;
         }
         [ContextMenu(nameof(ResetComponents))]
         public void ResetComponents()

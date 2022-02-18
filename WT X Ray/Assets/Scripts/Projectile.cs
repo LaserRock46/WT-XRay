@@ -18,6 +18,9 @@ namespace Project.Uncategorized
 
         #region Fields
         [Header("Fields", order = 1)]
+        [SerializeField] private bool _inAction;
+        public bool InAction { get { return _inAction; } private set { _inAction = value; } }
+
         [SerializeField] private ShrapnelController[] _shrapnels;
         [SerializeField] private float _shrapnelForce = 0.5f;
         [SerializeField] private float _projectileForce = 1f;       
@@ -71,6 +74,7 @@ namespace Project.Uncategorized
         public void Shot()
         {
             gameObject.SetActive(true);
+            _inAction = true;
             _flightController.FlightSetupAll(_damageMode == VehicleComponent.DamageMode.Visualisation ? _projectileForce : _forceSimulation, 0, true);
             GenerateProjectileCollisions();
 
@@ -191,6 +195,7 @@ namespace Project.Uncategorized
             _firstHullPenetrationPerformed = false;
             _projectileMat.SetFloat("_Alpha", 1);
             _exploded = false;
+            _inAction = false;
            
         }
         #endregion

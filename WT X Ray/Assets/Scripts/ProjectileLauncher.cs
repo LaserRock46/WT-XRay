@@ -18,6 +18,7 @@ namespace Project.Uncategorized
         [SerializeField] private LayerMask _projectileTarget;
         [SerializeField] private Vector3 _projectileOffsetFromCamera = Vector3.forward;
         [SerializeField] private SimulationController _simulationController;
+        [SerializeField] private LayerMask _armorLayer;
         #endregion
 
         #region Functions
@@ -40,7 +41,7 @@ namespace Project.Uncategorized
             if (Input.GetKeyDown(KeyCode.Mouse0)) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, _projectileTarget))
+                if (Physics.Raycast(ray, out hit, _projectileTarget,_armorLayer))
                 {
                     _projectile.ResetProjectile();
                     _simulationController.ResetComponents();
@@ -49,7 +50,12 @@ namespace Project.Uncategorized
                     _projectile.transform.localPosition = _projectileOffsetFromCamera;
 
                     _projectile.Shot();
+                    _simulationController.SetMode(SimulationController.Mode.PreviewDamage);
                 }
+            }
+            if(_projectile.InAction == false && _simulationController.CurrentMode == SimulationController.Mode.PreviewDamage)
+            {
+                _simulationController.SetMode(SimulationController.Mode.PreviewPenetration);
             }
         }
         #endregion
