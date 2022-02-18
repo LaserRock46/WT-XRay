@@ -21,6 +21,17 @@ namespace Project.Uncategorized
         [SerializeField] private bool _inAction;
         public bool InAction { get { return _inAction; } private set { _inAction = value; } }
 
+
+        [Header("Penetration Calculator Values")]
+        [SerializeField] private int _armorPenetration;
+        [SerializeField] private int _angleOfAttackNoRicochet;
+        [SerializeField] private int _angleOfAttackRicochet;
+        public int ArmorPenetration { get { return _armorPenetration; } private set { _armorPenetration = value; } }
+        public int AngleOfAttackNoRicochet { get { return _angleOfAttackNoRicochet; } private set { _angleOfAttackNoRicochet = value; } }
+        public int AngleOfAttackRicochet { get { return _angleOfAttackRicochet; } private set { _angleOfAttackRicochet = value; } }
+
+
+        [Header("Damage Simulation Values")]
         [SerializeField] private ShrapnelController[] _shrapnels;
         [SerializeField] private float _shrapnelForce = 0.5f;
         [SerializeField] private float _projectileForce = 1f;       
@@ -70,6 +81,10 @@ namespace Project.Uncategorized
         void TestProjectile()
         {
             Shot();
+        }
+        public void SetHitResult()
+        {
+
         }
         public void Shot()
         {

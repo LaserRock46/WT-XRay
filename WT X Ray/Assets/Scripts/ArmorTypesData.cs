@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Project.Uncategorized
 {
-    public class ArmorTypesData 
+    public static class ArmorTypesData 
     {
          #region Temp
         //[Header("Temporary Things", order = 0)]

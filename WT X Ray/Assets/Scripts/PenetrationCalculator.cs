@@ -29,6 +29,13 @@ namespace Project.Uncategorized
         public enum PenetrationPossibility { Penetration_Possibility_Is_Low, Penetration_Not_Possible, Penetration_Is_Possible }
         [SerializeField] private PenetrationPossibility _penetrationPossibility;
 
+        [SerializeField] private Projectile _HE105MM;
+        [SerializeField] private Projectile _AP90MM;
+        [SerializeField] private Projectile _APCR37MM;
+        [SerializeField] private Projectile _machineGunAP;
+
+
+
         #endregion
 
         #region Functions
@@ -44,13 +51,13 @@ namespace Project.Uncategorized
             Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _armorLayer, QueryTriggerInteraction.Ignore);
             return hit;
         }
-        Vector3 LinePlaneIntersection(Vector3 shootAttackDirection, Vector3 shootHitPoint, Vector3 armorNormal, Vector3 armorPlaneBackPoint)
+        Vector3 LinePlaneIntersection(Vector3 shootAttackDirection, Vector3 armorFrontSurface, Vector3 armorNormal, Vector3 armorBackSurface)
         {
-            Vector3 diff = shootHitPoint - armorPlaneBackPoint;
+            Vector3 diff = armorFrontSurface - armorBackSurface;
             float prod1 = Vector3.Dot(diff, armorNormal);
             float prod2 = Vector3.Dot(shootAttackDirection, armorNormal);
             float prod3 = prod1 / prod2;
-            return shootHitPoint - shootAttackDirection * prod3;
+            return armorFrontSurface - shootAttackDirection * prod3;
         }
         float GetEffectiveThickness(RaycastHit hit)
         {
@@ -75,6 +82,18 @@ namespace Project.Uncategorized
             float angleLinear = Mathf.InverseLerp(0, 90, Vector3.Angle(_armorHit.normal, Vector3.up));
             float angleGaijinLogic = Mathf.Lerp(90, 0, angleLinear);
             return angleGaijinLogic;
+        }
+        float GetArmorRHAEquivalent()
+        {
+            return _armorPanel.Thickness * ArmorTypesData.ArmorTypeRHARatio[_armorPanel.ArmorType];
+        }
+        float GetProjectilePenetration()
+        {         
+            return GetArmorRHAEquivalent() * _depreciationOverDistance.Evaluate(_shootDistance);
+        }
+        PenetrationPossibility GetPenetrationPossibility()
+        {
+            return PenetrationPossibility.Penetration_Not_Possible;
         }
         #endregion
 
