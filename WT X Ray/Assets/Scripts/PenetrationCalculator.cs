@@ -16,17 +16,16 @@ namespace Project.Uncategorized
         [Header("Fields", order = 1)]
         [SerializeField] private SimulationController _simulationController;
         [SerializeField] private PenetrationCalculatorUI _penetrationCalculatorUI;
-        [SerializeField] private float _shootDistance;
-        [SerializeField] private AnimationCurve _depreciationOverDistance;
         [SerializeField] private LayerMask _armorLayer;
         private RaycastHit _armorHit;
         private ArmorPanel _armorPanel;
 
         [SerializeField] private float _effectiveThickness;
+        [SerializeField] private float _effectiveThicknessRHA;
         [SerializeField] private float _attackAngle;
         [SerializeField] private float _constructionalAngle;
 
-        public enum PenetrationPossibility { Penetration_Possibility_Is_Low, Penetration_Not_Possible, Penetration_Is_Possible }
+        public enum PenetrationPossibility { Penetration_Possibility_Is_Low, Penetration_Not_Possible, Penetration_Is_Possible, Ricochet }
         [SerializeField] private PenetrationPossibility _penetrationPossibility;
 
         [SerializeField] private Projectile _HE105MM;
@@ -34,7 +33,13 @@ namespace Project.Uncategorized
         [SerializeField] private Projectile _APCR37MM;
         [SerializeField] private Projectile _machineGunAP;
 
+        private Projectile _selectedProjectile;
 
+        public enum ShellType { HE105MM, AP90MM, APCR37MM, MachineGunAP}
+        [SerializeField] private ShellType _shellType;
+
+        [SerializeField] private float _shotDistance;
+        [SerializeField] private AnimationCurve _depreciationOverDistance;
 
         #endregion
 
@@ -83,16 +88,32 @@ namespace Project.Uncategorized
             float angleGaijinLogic = Mathf.Lerp(90, 0, angleLinear);
             return angleGaijinLogic;
         }
-        float GetArmorRHAEquivalent()
+        float GetArmorRHAEquivalent(float effectiveThickness)
         {
-            return _armorPanel.Thickness * ArmorTypesData.ArmorTypeRHARatio[_armorPanel.ArmorType];
-        }
-        float GetProjectilePenetration()
-        {         
-            return GetArmorRHAEquivalent() * _depreciationOverDistance.Evaluate(_shootDistance);
-        }
-        PenetrationPossibility GetPenetrationPossibility()
+            return effectiveThickness * ArmorTypesData.ArmorTypeRHARatio[_armorPanel.ArmorType];
+        }      
+        float GetProjectilePenetrationWithDepreciation()
         {
+            return _selectedProjectile.ArmorPenetration * _depreciationOverDistance.Evaluate(_shotDistance);
+        }
+        PenetrationPossibility GetPenetrationPossibility(float effectiveThicknessRHA, float attackAngle)
+        {
+
+            if (attackAngle > _selectedProjectile.AngleOfAttackRicochet)
+            {
+                return PenetrationPossibility.Ricochet;
+            }
+
+            float penetrationWithDepreciation = GetProjectilePenetrationWithDepreciation();
+            if(penetrationWithDepreciation < effectiveThicknessRHA)
+            {
+                return PenetrationPossibility.Penetration_Not_Possible;
+            }
+            if (penetrationWithDepreciation > effectiveThicknessRHA)
+            {
+                return PenetrationPossibility.Penetration_Is_Possible;
+            }
+
             return PenetrationPossibility.Penetration_Not_Possible;
         }
         #endregion
@@ -100,7 +121,7 @@ namespace Project.Uncategorized
         #region Methods
         void Start()
         {
-            
+            SetShellType(0);
         }
         void Update()
         {
@@ -121,8 +142,10 @@ namespace Project.Uncategorized
                 {
                     _armorPanel = _armorHit.collider.GetComponent<ArmorPanel>();
                     _effectiveThickness = GetEffectiveThickness(_armorHit);
+                    _effectiveThicknessRHA = GetArmorRHAEquivalent(_effectiveThickness);
                     _attackAngle = GetAttackAngle();
                     _constructionalAngle = GetConstructionalAngle();
+                    _penetrationPossibility = GetPenetrationPossibility(_effectiveThicknessRHA,_attackAngle);
 
                 }
             }
@@ -132,15 +155,45 @@ namespace Project.Uncategorized
         {
             if (_armorHit.collider && _simulationController.CurrentMode == SimulationController.Mode.PreviewPenetration)
             {
-            _penetrationCalculatorUI.Show();
-                _penetrationCalculatorUI.SetData(_armorPanel.ArmorType, _armorPanel.Thickness, _effectiveThickness, _attackAngle, _constructionalAngle, _penetrationPossibility);
-            _penetrationCalculatorUI.UpdatePanelPosition();
+                _penetrationCalculatorUI.Show();
+                _penetrationCalculatorUI.SetData(_armorPanel.ArmorType, _armorPanel.Thickness, _effectiveThicknessRHA, _effectiveThickness, _attackAngle, _constructionalAngle, _penetrationPossibility);
+                _penetrationCalculatorUI.UpdatePanelPosition();
             }
             else
             {
                 _penetrationCalculatorUI.Hide();
             }
 
+        }
+        public void SetShotDistance(float value)
+        {
+            _shotDistance = value;
+            _penetrationCalculatorUI.SetShotDistanceText(value);
+
+            float penetrationWithDepreciation = GetProjectilePenetrationWithDepreciation();
+            _penetrationCalculatorUI.SetArmorPenetrationText(penetrationWithDepreciation);
+        }
+        public void SetShellType(int enumIndex)
+        {
+            _shellType = (ShellType)enumIndex;
+
+            switch (_shellType)
+            {
+                case ShellType.HE105MM:
+                    _selectedProjectile = _HE105MM;
+                    break;
+                case ShellType.AP90MM:
+                    _selectedProjectile = _AP90MM;
+                    break;
+                case ShellType.APCR37MM:
+                    _selectedProjectile = _APCR37MM;
+                    break;
+                case ShellType.MachineGunAP:
+                    _selectedProjectile = _machineGunAP;
+                    break;
+            }
+
+            SetShotDistance(_shotDistance);
         }
         private void OnDrawGizmosSelected()
         {

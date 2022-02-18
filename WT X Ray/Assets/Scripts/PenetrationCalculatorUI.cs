@@ -15,6 +15,7 @@ namespace Project.Uncategorized
         #region Fields
         [Header("Fields", order = 1)]
         [SerializeField] private TMP_Text _shotDistance;
+        [SerializeField] private TMP_Text _armorPenetration;
 
         [SerializeField] private Vector2 _penetrationDataPanelOffset;
         [SerializeField] private RectTransform _penetrationDataPanel;
@@ -25,6 +26,8 @@ namespace Project.Uncategorized
         [SerializeField] private TMP_Text _attackAngle;
         [SerializeField] private TMP_Text _constructionalAngle;
         [SerializeField] private TMP_Text _penetrationPossibility;
+
+        
 
 
 
@@ -45,11 +48,11 @@ namespace Project.Uncategorized
             if (_penetrationDataPanel.gameObject.activeSelf == false)
                 _penetrationDataPanel.gameObject.SetActive(true);
         }
-        public void SetData(ArmorTypesData.ArmorType armorType, float thickness, float effectiveThickness, float attackAngle, float constructionalAngle, PenetrationCalculator.PenetrationPossibility penetrationPossibility)
+        public void SetData(ArmorTypesData.ArmorType armorType, float thickness, float effectiveThicknessRHA, float effectiveThickness, float attackAngle, float constructionalAngle, PenetrationCalculator.PenetrationPossibility penetrationPossibility)
         {
             _armorType.text = armorType.ToString();
             _thickness.text = Mathf.RoundToInt(thickness).ToString();
-            _effectiveThickness.text = Mathf.RoundToInt(effectiveThickness).ToString();
+            _effectiveThickness.text = Mathf.RoundToInt(effectiveThickness) + " / RHA:" + Mathf.RoundToInt(effectiveThicknessRHA);
             _attackAngle.text = Mathf.RoundToInt(attackAngle).ToString();
             _constructionalAngle.text = Mathf.RoundToInt(constructionalAngle).ToString();
             _penetrationPossibility.text = penetrationPossibility.ToString();
@@ -65,11 +68,22 @@ namespace Project.Uncategorized
                 case PenetrationCalculator.PenetrationPossibility.Penetration_Is_Possible:
                     _penetrationPossibility.color = Color.green;
                     break;
+                case PenetrationCalculator.PenetrationPossibility.Ricochet:
+                    _penetrationPossibility.color = new Color(0.8f, 0.5f, 0.8f, 1f);
+                    break;
             }
         }
         public void UpdatePanelPosition()
         {
             _penetrationDataPanel.position = (Vector2)Input.mousePosition + _penetrationDataPanelOffset;
+        }
+        public void SetShotDistanceText(float value)
+        {
+            _shotDistance.text = value + "m";
+        }
+        public void SetArmorPenetrationText(float value)
+        {
+            _armorPenetration.text = Mathf.RoundToInt(value) + "mm";
         }
         #endregion
     }
