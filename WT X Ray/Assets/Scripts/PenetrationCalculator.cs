@@ -51,12 +51,6 @@ namespace Project.Uncategorized
             Physics.Raycast(ray,out RaycastHit hit, Mathf.Infinity, _armorLayer, QueryTriggerInteraction.Ignore);
             return hit;
         }
-        RaycastHit ArmorHitTransform()
-        {
-            Ray ray = new Ray(transform.position,transform.forward);
-            Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _armorLayer, QueryTriggerInteraction.Ignore);
-            return hit;
-        }
         Vector3 LinePlaneIntersection(Vector3 shootAttackDirection, Vector3 armorFrontSurface, Vector3 armorNormal, Vector3 armorBackSurface)
         {
             Vector3 diff = armorFrontSurface - armorBackSurface;

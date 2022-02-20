@@ -240,19 +240,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a03cf165157215b4ba8b892a2980fa5b, type: 2}
   - {fileID: 2100000, guid: a71a856dda71d3a418dc16c423ca6f35, type: 2}
   - {fileID: 2100000, guid: bb36daafce61af542b3882ba10416973, type: 2}
-  _layerXRay:
-    serializedVersion: 2
-    m_Bits: 64
-  _layerXRayRedOutline:
-    serializedVersion: 2
-    m_Bits: 4096
-  _layerXRayRedAnimated:
-    serializedVersion: 2
-    m_Bits: 8192
-  _redOutline: {fileID: 0}
   _componentRenderers:
   - {fileID: 5213986956420721108}
   - {fileID: 3109732523088846721}
+  _componentSkinnedRenderers: []
   _simulationController: {fileID: 0}
 --- !u!114 &213064791239173311
 MonoBehaviour:
