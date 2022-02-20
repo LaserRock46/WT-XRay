@@ -146,7 +146,7 @@ namespace Project.Uncategorized
                     _attackAngle = GetAttackAngle();
                     _constructionalAngle = GetConstructionalAngle();
                     _penetrationPossibility = GetPenetrationPossibility(_effectiveThicknessRHA,_attackAngle);
-
+                    _selectedProjectile.SetHitResult(_penetrationPossibility);
                 }
             }
           

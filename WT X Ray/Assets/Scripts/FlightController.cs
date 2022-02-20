@@ -28,7 +28,7 @@ namespace Project.Uncategorized
 
 
         #region Methods
-        public void FlightSetup(float flightSpeed,float rayOffset = 0, bool drawDebug= false)
+        public void FlightToTankSetup(float flightSpeed,float rayOffset = 0, bool drawDebug= false)
         {
             RaycastHit hit;
 
@@ -45,7 +45,7 @@ namespace Project.Uncategorized
                 }
             }
         }
-        public void FlightSetupAll(float flightSpeed, float rayOffset = 0, bool drawDebug = false)
+        public void FlightThroughTankSetup(float flightSpeed, float rayOffset = 0, bool drawDebug = false)
         {        
             RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, 100,_armorLayerMask);
 
@@ -63,6 +63,16 @@ namespace Project.Uncategorized
             {
                 Debug.DrawLine(flightStart, flightEnd, Color.green, 2f);
             }
+            StartCoroutine(Flight(flightSpeed));
+        }
+        public void FlightAwayFromTankSetup(float flightSpeed, Vector3 direction)
+        {
+            float flightAwayDistance = 2;
+            
+            flightStart = transform.position;
+            flightEnd = transform.position + (direction * flightAwayDistance);
+            flightDistance = Vector3.Distance(flightStart, flightEnd);
+
             StartCoroutine(Flight(flightSpeed));
         }
         IEnumerator Flight(float flightSpeed)

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Project.Uncategorized
 {
@@ -9,10 +8,7 @@ namespace Project.Uncategorized
     public class Projectile : MonoBehaviour
     {
         #region Temp
-        [Header("Temporary Things", order = 0)]
-        public Collider[] hits;
-        public float coverage;
-        public float[] distance;
+        //[Header("Temporary Things", order = 0)]
 
         #endregion
 
@@ -33,13 +29,14 @@ namespace Project.Uncategorized
 
         [Header("Damage Simulation Values")]
         [SerializeField] private ShrapnelController[] _shrapnels;
+        [SerializeField] private float _blastRadius = 1;
         [SerializeField] private float _shrapnelForce = 0.5f;
         [SerializeField] private float _projectileForce = 1f;       
         [SerializeField] private float _forceSimulation = 1000f;
         [SerializeField] private int _shrapnelDamage = 15;
         [SerializeField] private int _projectileDamage = 500;
         [SerializeField] private float _afterPenetrationOffset = 0.1f;
-        [SerializeField] private float _countdownAfterSecondPenetration = 0.5f;
+        [SerializeField] private float _countdownAfterSecondPenetration = 0.5f;    
         [SerializeField] private VehicleComponent.DamageMode _damageMode;
         [SerializeField] private FlightController _flightController;
         [SerializeField] private HitPointsPool _hitPointsPool;
@@ -49,14 +46,15 @@ namespace Project.Uncategorized
         private List<RaycastHit> _projectileTargets = new List<RaycastHit>();
         private bool[] _executedHit;
 
-        private bool _firstHullPenetrationPerformed = false;   
-        private Vector3 _penetrationPosition = new Vector3();
+        private bool _firstHullContactPerformed = false;   
+        private Vector3 _firstContactPosition = new Vector3();
         private bool _exploded = false;
         [SerializeField] private Transform _parent;
 
-        [SerializeField] private HitCamera _hitCamera;
 
-
+        [Header("Hit Result Values")]
+        [SerializeField] private PenetrationCalculator.PenetrationPossibility _hitResult;
+    
         #endregion
 
         #region Functions
@@ -66,36 +64,33 @@ namespace Project.Uncategorized
 
 
         #region Methods
-        private void Update()
-        {
-            hits = new Collider[_projectileTargets.Count];
-            distance = new float[_projectileTargets.Count];
-            coverage = _flightController.coverage;
-            for (int i = 0; i < _projectileTargets.Count; i++)
-            {
-                hits[i] = _projectileTargets[i].collider;
-                distance[i] = _projectileTargets[i].distance;
-            }
-        }
         [ContextMenu("Test Projectile")]
         void TestProjectile()
         {
             Shot();
         }
-        public void SetHitResult()
+        public void SetHitResult(PenetrationCalculator.PenetrationPossibility hitResult)
         {
-
+            _hitResult = hitResult;
         }
         public void Shot()
         {
             gameObject.SetActive(true);
             _inAction = true;
-            _flightController.FlightSetupAll(_damageMode == VehicleComponent.DamageMode.Visualisation ? _projectileForce : _forceSimulation, 0, true);
-            GenerateProjectileCollisions();
-
-            if (_hitCamera)
+          
+            switch (_hitResult)
             {
-                _hitCamera.TrackProjectile(transform);
+                case PenetrationCalculator.PenetrationPossibility.Penetration_Is_Possible:
+                    _flightController.FlightThroughTankSetup(_projectileForce, 0, true);
+                    GenerateProjectileCollisions(true);
+                    break;
+                case PenetrationCalculator.PenetrationPossibility.Penetration_Not_Possible:
+                    _flightController.FlightToTankSetup(_projectileForce);
+                    GenerateProjectileCollisions(false);
+                    break;
+                case PenetrationCalculator.PenetrationPossibility.Ricochet:
+                    _flightController.FlightToTankSetup(_projectileForce);
+                    break;
             }
         }
         void Explode(Vector3 position)
@@ -109,20 +104,21 @@ namespace Project.Uncategorized
                 }
             }
         }
-        void GenerateProjectileCollisions()
+        void GenerateProjectileCollisions(bool throughEntireTank)
         {
-            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
+            RaycastHit[] targets = new RaycastHit[1];
+            if (throughEntireTank)
+            {
+                targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
+            }
+            else
+            {
+                Physics.Raycast(transform.position, transform.forward,out targets[0], _flightController.flightDistance);
+            }
             _projectileTargets.Clear();
             _projectileTargets.AddRange(targets);
             _executedHit = new bool[targets.Length];
-            int count = 0;
-            for (int i = 0; i < _projectileTargets.Count; i++)
-            {
-                if (_projectileTargets[i].collider.gameObject.TryGetComponent(out VehicleComponentCollider vehicleComponentCollider))
-                {
-                    count++;
-                }
-            }
+          
             StartCoroutine(CollisionUpdate());
         }
         IEnumerator CollisionUpdate()
@@ -133,7 +129,7 @@ namespace Project.Uncategorized
                 yield return null;
             }
 
-            DetectSecondArmorPenetration();
+            DetectLastArmorContact();
 
             yield return null;
         }
@@ -147,35 +143,44 @@ namespace Project.Uncategorized
                     {
                         vehicleComponentCollider.vehicleComponent.Hit(_projectileDamage, _damageMode);
                         _hitPointsPool.GetHitPointHere(_projectileTargets[i].point);
+                        if(_projectileTargets.Count == 1)
+                        {
+                            //DetectFirstArmorContact(_projectileTargets[i]);
+                        }
                     }
                     if (_projectileTargets[i].collider.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
                     {
                         armorPanelAnimation.Hit();
                         _hitPointsPool.GetHitPointHere(_projectileTargets[i].point, true);
-                        DetectFirstArmorPenetration(_projectileTargets[i]);
+                        //DetectFirstArmorContact(_projectileTargets[i]);
+                    }
+                    if (i == 0)
+                    {
+                        DetectFirstArmorContact(_projectileTargets[i]);
+                        _hitPointsPool.GetHitPointHere(_projectileTargets[i].point, true, _blastRadius);
                     }
                     _executedHit[i] = true;
                 }
             }
         }
-        void DetectFirstArmorPenetration(RaycastHit hit)
+        void DetectFirstArmorContact(RaycastHit hit)
         {
-            if (_firstHullPenetrationPerformed == false)
+            if (_firstHullContactPerformed == false)
             {
-                _firstHullPenetrationPerformed = true;
-                _penetrationPosition = hit.point;
+                _firstHullContactPerformed = true;
+                _firstContactPosition = hit.point;
 
-                Vector3 explosionPosition = hit.point + (transform.forward * _afterPenetrationOffset);
-                Explode(explosionPosition);               
                 _silhouetteController.Reveal(hit.point);
 
-                if (_hitCamera)
+                if(_hitResult == PenetrationCalculator.PenetrationPossibility.Penetration_Is_Possible)
                 {
-                    _hitCamera.RotateAroundHitPoint(_flightController);
+                Vector3 explosionPosition = hit.point + (transform.forward * _afterPenetrationOffset);
+                Explode(explosionPosition);               
                 }
+           
             }
         }
-        void DetectSecondArmorPenetration() 
+        void DetectLastArmorContact() 
         {       
             if (_flightController.coverage >= _flightController.flightDistance)
             {
@@ -183,8 +188,10 @@ namespace Project.Uncategorized
                 StartCoroutine(CountdownAfterSecondPenetration());
             }
         }
-    
-       
+        void Ricochet()
+        {
+
+        }
         private IEnumerator CountdownAfterSecondPenetration()
         {
             yield return new WaitForSeconds(_countdownAfterSecondPenetration);
@@ -206,8 +213,8 @@ namespace Project.Uncategorized
             _silhouetteController.Hide();
             gameObject.SetActive(false);
             transform.localPosition = Vector3.zero;
-            _penetrationPosition = Vector3.zero;
-            _firstHullPenetrationPerformed = false;
+            _firstContactPosition = Vector3.zero;
+            _firstHullContactPerformed = false;
             _projectileMat.SetFloat("_Alpha", 1);
             _exploded = false;
             _inAction = false;

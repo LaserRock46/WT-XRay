@@ -91,24 +91,24 @@ namespace Project.Uncategorized
         void UpdateVisuals()
         {
             var layerAndMat = GetLayerAndMatByDurability(_currentDurabilityVisuals);
-          
-                foreach (MeshRenderer meshRenderer in _componentRenderers)
-                {
-                    meshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
-                    meshRenderer.gameObject.layer = layerAndMat.layer;
-                }    
-                foreach (SkinnedMeshRenderer skinnedMeshRenderer in _componentSkinnedRenderers)
-                {
-                    skinnedMeshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
-                    skinnedMeshRenderer.gameObject.layer = layerAndMat.layer;
-                }
+
+            foreach (MeshRenderer meshRenderer in _componentRenderers)
+            {
+                meshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
+                meshRenderer.gameObject.layer = layerAndMat.layer;
+            }
+            foreach (SkinnedMeshRenderer skinnedMeshRenderer in _componentSkinnedRenderers)
+            {
+                skinnedMeshRenderer.sharedMaterial = _xRayMat[layerAndMat.xRayMatIndex];
+                skinnedMeshRenderer.gameObject.layer = layerAndMat.layer;
+            }
             if (_currentDurabilityVisuals == 0 && _outlineEnabled == false)
             {
-                _outlineEnabled = true;           
+                _outlineEnabled = true;
             }
-            else if(_currentDurabilityVisuals == _maxDurability && _outlineEnabled == true)
+            else if (_currentDurabilityVisuals == _maxDurability && _outlineEnabled == true)
             {
-                _outlineEnabled = false;               
+                _outlineEnabled = false;
             }
         }
         public void Hit(int damage, DamageMode damageMode)

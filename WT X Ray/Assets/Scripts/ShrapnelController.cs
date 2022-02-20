@@ -46,7 +46,7 @@ namespace Project.Uncategorized
             _shrapnelDamage = shrapnelDamage;
             _damageMode = damageMode;
             transform.position = explosionPosition;
-            _flightController.FlightSetup(shrapnelSpeedForce);
+            _flightController.FlightToTankSetup(shrapnelSpeedForce);
             DisableShrapnelWithoutTarget();
             if (gameObject.activeSelf)
             {
