@@ -97,7 +97,7 @@ namespace Project.Uncategorized
         }
         void GenerateShrapnelCollisions()
         {       
-            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
+            RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.FlightDistance);
             _shrapnelTargets.Clear();
             _shrapnelTargets.AddRange(targets);
             _executedHit = new bool[targets.Length];
@@ -105,12 +105,12 @@ namespace Project.Uncategorized
         }     
         IEnumerator CollisionUpdate()
         {          
-            while (_flightController.coverage < _flightController.flightDistance) 
+            while (_flightController.coverage < _flightController.FlightDistance) 
             {            
                 ExecuteShrapnelCollision(_flightController.coverage);           
                 yield return null;
             }
-            ExecuteShrapnelCollision(_flightController.flightDistance);
+            ExecuteShrapnelCollision(_flightController.FlightDistance);
             StartCoroutine(CountdownAfterArmorPanelHit());
             yield return null;
         }

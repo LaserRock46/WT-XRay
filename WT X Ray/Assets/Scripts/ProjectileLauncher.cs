@@ -13,6 +13,9 @@ namespace Project.Uncategorized
 
         #region Fields
         [Header("Fields", order = 1)]
+        [SerializeField] private SimulationController _simulationController;
+        [SerializeField] private PenetrationCalculator _penetrationCalculator;
+
         [SerializeField] private Projectile _HE105MM;
         [SerializeField] private Projectile _AP90MM;
         [SerializeField] private Projectile _APCR37MM;
@@ -24,7 +27,6 @@ namespace Project.Uncategorized
         [SerializeField] private Transform _projectileParent;
         [SerializeField] private LayerMask _projectileTarget;
         [SerializeField] private Vector3 _projectileOffsetFromCamera = Vector3.forward;
-        [SerializeField] private SimulationController _simulationController;
         [SerializeField] private LayerMask _armorLayer;
         #endregion
 
@@ -55,7 +57,9 @@ namespace Project.Uncategorized
                     _projectileParent.position = ray.origin;
                     _projectileParent.forward = ray.direction;
                     _selectedProjectile.transform.localPosition = _projectileOffsetFromCamera;
+                    _selectedProjectile.transform.forward = _projectileParent.forward;
 
+                    _selectedProjectile.SetHitResult(_penetrationCalculator.HitResult);
                     _selectedProjectile.Shot();
 
 

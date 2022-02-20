@@ -90,6 +90,7 @@ namespace Project.Uncategorized
                     break;
                 case PenetrationCalculator.PenetrationPossibility.Ricochet:
                     _flightController.FlightToTankSetup(_projectileForce);
+                    Ricochet();
                     break;
             }
         }
@@ -109,11 +110,11 @@ namespace Project.Uncategorized
             RaycastHit[] targets = new RaycastHit[1];
             if (throughEntireTank)
             {
-                targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.flightDistance);
+                targets = Physics.RaycastAll(transform.position, transform.forward, _flightController.FlightDistance);
             }
             else
             {
-                Physics.Raycast(transform.position, transform.forward,out targets[0], _flightController.flightDistance);
+                Physics.Raycast(transform.position, transform.forward,out targets[0], Mathf.Infinity);
             }
             _projectileTargets.Clear();
             _projectileTargets.AddRange(targets);
@@ -123,7 +124,7 @@ namespace Project.Uncategorized
         }
         IEnumerator CollisionUpdate()
         {
-            while (_flightController.coverage < _flightController.flightDistance)
+            while (_flightController.coverage < _flightController.FlightDistance)
             {
                 ExecuteProjectileCollision(_flightController.coverage);
                 yield return null;
@@ -143,16 +144,13 @@ namespace Project.Uncategorized
                     {
                         vehicleComponentCollider.vehicleComponent.Hit(_projectileDamage, _damageMode);
                         _hitPointsPool.GetHitPointHere(_projectileTargets[i].point);
-                        if(_projectileTargets.Count == 1)
-                        {
-                            //DetectFirstArmorContact(_projectileTargets[i]);
-                        }
+
                     }
                     if (_projectileTargets[i].collider.TryGetComponent(out ArmorPanelAnimation armorPanelAnimation))
                     {
                         armorPanelAnimation.Hit();
                         _hitPointsPool.GetHitPointHere(_projectileTargets[i].point, true);
-                        //DetectFirstArmorContact(_projectileTargets[i]);
+                        DetectFirstArmorPenetration(_projectileTargets[i]);
                     }
                     if (i == 0)
                     {
@@ -165,12 +163,15 @@ namespace Project.Uncategorized
         }
         void DetectFirstArmorContact(RaycastHit hit)
         {
+                _silhouetteController.Reveal(hit.point);
+        }
+        void DetectFirstArmorPenetration(RaycastHit hit)
+        {
             if (_firstHullContactPerformed == false)
             {
                 _firstHullContactPerformed = true;
                 _firstContactPosition = hit.point;
 
-                _silhouetteController.Reveal(hit.point);
 
                 if(_hitResult == PenetrationCalculator.PenetrationPossibility.Penetration_Is_Possible)
                 {
@@ -179,20 +180,37 @@ namespace Project.Uncategorized
                 }
            
             }
+
         }
         void DetectLastArmorContact() 
         {       
-            if (_flightController.coverage >= _flightController.flightDistance)
+            if (_flightController.coverage >= _flightController.FlightDistance)
             {
                 StartCoroutine(FadeOutProjectile());
-                StartCoroutine(CountdownAfterSecondPenetration());
+                StartCoroutine(ResetCountdown());
             }
         }
         void Ricochet()
         {
+            RaycastHit hit;
+            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity);
+            Vector3 ricochetDirection = Vector3.Reflect(transform.forward, hit.normal);
+            StartCoroutine(RicochetUpdate(ricochetDirection));
+        }
+        IEnumerator RicochetUpdate(Vector3 direction)
+        {
+            yield return new WaitForSeconds(_flightController.FlightTime);
+
+            transform.forward = direction;
+            _flightController.FlightAwayFromTankSetup(_projectileForce, direction);
+            StartCoroutine(FadeOutProjectile());
+            StartCoroutine(ResetCountdown());
+
+            yield return null;
+
 
         }
-        private IEnumerator CountdownAfterSecondPenetration()
+        private IEnumerator ResetCountdown()
         {
             yield return new WaitForSeconds(_countdownAfterSecondPenetration);
             ResetProjectile();
@@ -213,6 +231,7 @@ namespace Project.Uncategorized
             _silhouetteController.Hide();
             gameObject.SetActive(false);
             transform.localPosition = Vector3.zero;
+            transform.localRotation = _parent.rotation;
             _firstContactPosition = Vector3.zero;
             _firstHullContactPerformed = false;
             _projectileMat.SetFloat("_Alpha", 1);

@@ -87,6 +87,11 @@ namespace Project.Uncategorized
             _currentDurabilitySimulation = _maxDurability;
             UpdateVisuals();
 
+            if(gameObject.TryGetComponent(out IVehicleComponentEffect vehicleComponentEffect))
+            {
+                vehicleComponentEffect.ResetEffect();
+            }
+
         }
         void UpdateVisuals()
         {
@@ -113,28 +118,20 @@ namespace Project.Uncategorized
         }
         public void Hit(int damage, DamageMode damageMode)
         {
-            if (damageMode == DamageMode.Visualisation)
+            if (_currentDurabilityVisuals != 0)
             {
-                if (_currentDurabilityVisuals != 0)
-                {
-                    _currentDurabilityVisuals = Mathf.Clamp(_currentDurabilityVisuals - damage, 0, _maxDurability);
-                    UpdateVisuals();
-                }
+                _currentDurabilityVisuals = Mathf.Clamp(_currentDurabilityVisuals - damage, 0, _maxDurability);
+                UpdateVisuals();
             }
-            else
-            {
-                _currentDurabilitySimulation = Mathf.Clamp(_currentDurabilitySimulation - damage, 0, _maxDurability);
-                Result();
-            }
-        }
-        void Result()
-        {
-            if(_currentDurabilitySimulation == 0)
+            if (_currentDurabilityVisuals == 0)
             {
                 _simulationController.NotifyAboutDestroyedComponent(_componentType);
+                if (gameObject.TryGetComponent(out IVehicleComponentEffect vehicleComponentEffect))
+                {
+                    vehicleComponentEffect.TriggerEffect();
+                }
             }
-        }
-
+        } 
         #endregion
     }
 }

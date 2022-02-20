@@ -45,11 +45,11 @@ namespace Project.Uncategorized
             Quaternion _rotStart = transform.rotation;
             Quaternion _rotEnd = _rotationTarget.rotation;
             Vector3 _postionStart = Vector3.zero;
-            Vector3 _positionEnd =flightController.flightStart + (transform.InverseTransformDirection(-_camera.forward) * (flightController.flightDistance*3));
+            Vector3 _positionEnd =flightController.FlightStart + (transform.InverseTransformDirection(-_camera.forward) * (flightController.FlightDistance*3));
 
-            while (flightController.coverage < flightController.flightDistance)
+            while (flightController.coverage < flightController.FlightDistance)
             {
-                float progress = Mathf.InverseLerp(0, flightController.flightDistance, flightController.coverage);
+                float progress = Mathf.InverseLerp(0, flightController.FlightDistance, flightController.coverage);
                 transform.rotation = Quaternion.Slerp(_rotStart, _rotEnd, _rotationProgress.Evaluate(progress));
                 _camera.localPosition = Vector3.Lerp(_postionStart,_positionEnd,progress);
                 yield return null;

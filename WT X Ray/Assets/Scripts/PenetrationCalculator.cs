@@ -27,6 +27,7 @@ namespace Project.Uncategorized
 
         public enum PenetrationPossibility { Penetration_Possibility_Is_Low, Penetration_Not_Possible, Penetration_Is_Possible, Ricochet }
         [SerializeField] private PenetrationPossibility _penetrationPossibility;
+        public PenetrationPossibility HitResult { get { return _penetrationPossibility; } private set { _penetrationPossibility = value; } }
 
         [SerializeField] private Projectile _HE105MM;
         [SerializeField] private Projectile _AP90MM;
@@ -132,24 +133,19 @@ namespace Project.Uncategorized
         {
             UIUpdate();
         }
-       
+
         void Calculate()
         {
-            if (_simulationController.CurrentMode == SimulationController.Mode.PreviewPenetration)
+            _armorHit = ArmorHit();
+            if (_armorHit.collider)
             {
-                _armorHit = ArmorHit();
-                if (_armorHit.collider)
-                {
-                    _armorPanel = _armorHit.collider.GetComponent<ArmorPanel>();
-                    _effectiveThickness = GetEffectiveThickness(_armorHit);
-                    _effectiveThicknessRHA = GetArmorRHAEquivalent(_effectiveThickness);
-                    _attackAngle = GetAttackAngle();
-                    _constructionalAngle = GetConstructionalAngle();
-                    _penetrationPossibility = GetPenetrationPossibility(_effectiveThicknessRHA,_attackAngle);
-                    _selectedProjectile.SetHitResult(_penetrationPossibility);
-                }
+                _armorPanel = _armorHit.collider.GetComponent<ArmorPanel>();
+                _effectiveThickness = GetEffectiveThickness(_armorHit);
+                _effectiveThicknessRHA = GetArmorRHAEquivalent(_effectiveThickness);
+                _attackAngle = GetAttackAngle();
+                _constructionalAngle = GetConstructionalAngle();
+                _penetrationPossibility = GetPenetrationPossibility(_effectiveThicknessRHA, _attackAngle);            
             }
-          
         }
         void UIUpdate()
         {

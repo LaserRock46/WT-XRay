@@ -15,9 +15,10 @@ namespace Project.Uncategorized
         [Header("Fields", order = 1)]
         [SerializeField] private LayerMask _armorLayerMask;
         public float coverage { get; private set; }
-        public float flightDistance { get; private set; }
-        public Vector3 flightStart { get; private set; }
-        public Vector3 flightEnd { get; private set; }
+        public float FlightDistance { get; private set; }
+        public Vector3 FlightStart { get; private set; }
+        public Vector3 FlightEnd { get; private set; }
+        public float FlightTime { get; private set; }
 
         #endregion
 
@@ -35,13 +36,14 @@ namespace Project.Uncategorized
             Vector3 offset = transform.forward * rayOffset;
             if (Physics.Raycast(transform.position + offset, transform.forward, out hit, 100.0f, _armorLayerMask))
             {
-                flightDistance = Vector3.Distance(transform.position, hit.point);
-                flightStart = transform.position;
-                flightEnd = hit.point;
+                FlightDistance = Vector3.Distance(transform.position, hit.point);
+                FlightStart = transform.position;
+                FlightEnd = hit.point;
+                FlightTime = FlightDistance / flightSpeed;
                 StartCoroutine(Flight(flightSpeed));
                 if (drawDebug)
                 {               
-                    Debug.DrawLine(flightStart, flightEnd, Color.green, 2f);
+                    Debug.DrawLine(FlightStart, FlightEnd, Color.green, 2f);
                 }
             }
         }
@@ -49,42 +51,43 @@ namespace Project.Uncategorized
         {        
             RaycastHit[] targets = Physics.RaycastAll(transform.position, transform.forward, 100,_armorLayerMask);
 
-            flightStart = transform.position;
-            flightDistance = 0;
+            FlightStart = transform.position;
+            FlightDistance = 0;
             for (int i = 0; i < targets.Length; i++)
             {
-                if(flightDistance < targets[i].distance)
+                if(FlightDistance < targets[i].distance)
                 {
-                    flightDistance = targets[i].distance;
-                    flightEnd = targets[i].point;
+                    FlightDistance = targets[i].distance;
+                    FlightEnd = targets[i].point;
                 }
             }
             if (drawDebug)
             {
-                Debug.DrawLine(flightStart, flightEnd, Color.green, 2f);
+                Debug.DrawLine(FlightStart, FlightEnd, Color.green, 2f);
             }
+            FlightTime = FlightDistance / flightSpeed;
             StartCoroutine(Flight(flightSpeed));
         }
         public void FlightAwayFromTankSetup(float flightSpeed, Vector3 direction)
         {
             float flightAwayDistance = 2;
             
-            flightStart = transform.position;
-            flightEnd = transform.position + (direction * flightAwayDistance);
-            flightDistance = Vector3.Distance(flightStart, flightEnd);
-
+            FlightStart = transform.position;
+            FlightEnd = transform.position + (direction * flightAwayDistance);
+            FlightDistance = Vector3.Distance(FlightStart, FlightEnd);
+            FlightTime = FlightDistance / flightSpeed;
             StartCoroutine(Flight(flightSpeed));
         }
         IEnumerator Flight(float flightSpeed)
         {
             coverage = 0;
-            while (coverage < flightDistance)
+            while (coverage < FlightDistance)
             {
                 float step = flightSpeed * Time.deltaTime;
                 coverage += step;
                
-                float time = Mathf.Clamp(Mathf.InverseLerp(0, flightDistance, coverage), 0, 1);
-                transform.position = Vector3.Lerp(flightStart, flightEnd, time);
+                float time = Mathf.Clamp(Mathf.InverseLerp(0, FlightDistance, coverage), 0, 1);
+                transform.position = Vector3.Lerp(FlightStart, FlightEnd, time);
                 
                 yield return null;
             }       
