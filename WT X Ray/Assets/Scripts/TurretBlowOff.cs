@@ -17,14 +17,14 @@ namespace Project.Uncategorized
         private bool _blowOffPerformed;
 
         [SerializeField] private MeshCollider[] _allNonConvexTurretAndCannonColliders;
-        [SerializeField] private Collider[] _turretTankers;
-        [SerializeField] private Collider[] _turretArmor;
+        [SerializeField] private Collider[] _turretTankersColliders;
+        [SerializeField] private Collider[] _turretArmorColliders;
 
         [SerializeField] private Rigidbody _turretRB;
         [SerializeField] private GameObject _fireStream;
         [SerializeField] private float _upForce;
-        [SerializeField] private float _sideForce;
         [SerializeField] private float _torque;
+        [SerializeField] private Transform _blowOffDirection;
 
         private Vector3 _initialTurretPosition;
         private Quaternion _initialTurretRotation;
@@ -59,23 +59,16 @@ namespace Project.Uncategorized
                 _blowOffPerformed = true;
                 SetupRigidbodyAndColliders(true);
                 StartCoroutine(BlowOff());
-                //transform.Translate(Vector3.up);
+                StartCoroutine(ReenableTurretColliders());
             }
 
         }
         IEnumerator BlowOff()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.75f);
             _turretRB.isKinematic = false;
-
-            foreach (MeshCollider item in _allNonConvexTurretAndCannonColliders)
-            {
-                //item.enabled = true;
-            }
-
-            _turretRB.AddForce(Vector3.up * _upForce, ForceMode.Impulse);
-            _turretRB.AddForce(Random.insideUnitCircle * _sideForce, ForceMode.Impulse);
-            _turretRB.AddTorque(Random.insideUnitSphere * _upForce, ForceMode.Impulse);
+            _turretRB.AddForce(_blowOffDirection.up * _upForce, ForceMode.Impulse);
+            _turretRB.AddTorque(Random.insideUnitSphere * _torque, ForceMode.Impulse);
             _fireStream.SetActive(true);
             yield return null;
 
@@ -88,11 +81,11 @@ namespace Project.Uncategorized
                 {
                     item.convex = true;               
                 }
-                foreach (Collider item in _turretArmor)
+                foreach (Collider item in _turretArmorColliders)
                 {
                    item.enabled = false;
                 }
-                foreach (Collider item in _turretTankers)
+                foreach (Collider item in _turretTankersColliders)
                 {
                     item.enabled = false;
                 }
@@ -104,10 +97,10 @@ namespace Project.Uncategorized
                 {
                     item.convex = false;
                 }             
-                foreach (Collider item in _turretTankers)
+                foreach (Collider item in _turretTankersColliders)
                 {
-                    item.enabled = false;
-                }
+                    item.enabled = true;
+                }              
 
                 _turretRB.isKinematic = true;
                 _turretRB.velocity = Vector3.zero;
@@ -116,8 +109,8 @@ namespace Project.Uncategorized
         }
         IEnumerator ReenableTurretColliders()
         {
-            yield return new WaitForSeconds(2);
-            foreach (Collider item in _turretArmor)
+            yield return new WaitForSeconds(1.25f);
+            foreach (Collider item in _turretArmorColliders)
             {
                 item.enabled = true;
             }
